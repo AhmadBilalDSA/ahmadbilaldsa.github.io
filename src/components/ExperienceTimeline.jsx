@@ -16,7 +16,7 @@ export default function ExperienceTimeline() {
     <div id="experience" className="scroll-mt-28">
       <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="mb-2 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-cyan-400">
+          <p className="mb-2 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-cyan-400">
             <Briefcase className="size-3.5" />
             04 / background &amp; career
           </p>
@@ -33,7 +33,7 @@ export default function ExperienceTimeline() {
         {data.metrics.experience.map((exp) => (
           <div
             key={exp.role}
-            className="rounded-2xl border border-slate-800/80 bg-surface/90 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40"
+            className="rounded-2xl border border-slate-800/80 bg-surface/90 card-bevel p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40"
           >
             <div className="flex items-start justify-between gap-3">
               <CardShell icon={Building2} label={exp.organization} />
@@ -54,7 +54,7 @@ export default function ExperienceTimeline() {
           </div>
         ))}
 
-        <div className="rounded-2xl border border-slate-800/80 bg-surface/90 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40">
+        <div className="rounded-2xl border border-slate-800/80 bg-surface/90 card-bevel p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40">
           <CardShell icon={GraduationCap} label="Education" accent="text-sky-400" />
           <p className="text-lg font-semibold text-white">{data.metrics.education.degree}</p>
           <p className="mt-1 text-sm text-slate-300">{data.metrics.education.school}</p>
@@ -75,7 +75,7 @@ export default function ExperienceTimeline() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-800/80 bg-surface/90 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-500/40">
+        <div className="rounded-2xl border border-slate-800/80 bg-surface/90 card-bevel p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-500/40">
           <CardShell icon={Award} label="Certifications" accent="text-emerald-400" />
           <ul className="space-y-3">
             {data.metrics.certifications.map((cert) => (

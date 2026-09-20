@@ -94,7 +94,7 @@ function PrLogCard({ pr }) {
       href={pr.prUrl}
       target="_blank"
       rel="noreferrer noopener"
-      className="group flex flex-col gap-3 rounded-2xl border border-slate-800/80 bg-[#0d121c] p-5 shadow-card backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40"
+      className="group flex flex-col gap-3 rounded-2xl border border-slate-800/80 bg-[#0d121c] card-bevel p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40"
     >
       <div className="flex flex-wrap items-center gap-2">
         <span className="truncate font-mono text-[11px] text-slate-400">
@@ -146,7 +146,7 @@ function StageCard({ stage }) {
   const t = TONES[stage.tone]
   const Icon = stage.icon
   return (
-    <div className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl border border-slate-800/80 bg-[#0d121c] p-5 shadow-card backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40">
+    <div className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl border border-slate-800/80 bg-[#0d121c] card-bevel p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40">
       <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-3">
@@ -210,7 +210,7 @@ export default function EngineeringRadar() {
     <section id="radar" className="scroll-mt-28">
       <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="mb-2 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-cyan-400">
+          <p className="mb-2 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-cyan-400">
             <Radar className="size-3.5" />
             02 / engineering-radar
           </p>
@@ -230,7 +230,7 @@ export default function EngineeringRadar() {
       <div className="mt-12">
         <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="mb-2 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-emerald-400">
+            <p className="mb-2 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-emerald-400">
               <GitPullRequest className="size-3.5" />
               upstream engineering logs
             </p>
