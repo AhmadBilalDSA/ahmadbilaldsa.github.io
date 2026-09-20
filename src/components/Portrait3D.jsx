@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 
 const AVATAR_PRIMARY = '/avatar.jpg'
-const AVATAR_ONLINE = 'https://github.com/AhmadBilalDSA.png'
+const AVATAR_ONLINE = 'https://avatars.githubusercontent.com/u/315737484?v=4&s=1024'
 
 export default function Portrait3D() {
   const [imgSrc, setImgSrc] = useState(AVATAR_PRIMARY)
@@ -33,7 +33,7 @@ export default function Portrait3D() {
       <motion.div
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
-        className="group relative h-28 w-28 sm:h-32 sm:w-32"
+        className="group relative h-48 w-48 sm:h-60 sm:w-60 md:h-64 md:w-64"
         whileHover={{ scale: 1.04 }}
         transition={{ type: 'spring', stiffness: 220, damping: 16 }}
         style={{ rotateX: tiltX, rotateY: tiltY, transformStyle: 'preserve-3d' }}
@@ -49,9 +49,9 @@ export default function Portrait3D() {
               if (imgSrc !== AVATAR_ONLINE) setImgSrc(AVATAR_ONLINE)
             }}
             alt="Ahmad Bilal — profile portrait"
-            width={128}
-            height={128}
-            className="h-full w-full rounded-2xl object-cover object-top filter contrast-[1.05] brightness-95 transition-all duration-300 group-hover:brightness-105"
+            width={256}
+            height={256}
+            className="avatar-hq w-full h-full object-cover object-top rounded-2xl filter contrast-[1.06] brightness-100 shadow-inner"
           />
           <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
         </motion.div>
@@ -72,10 +72,10 @@ export default function Portrait3D() {
 
         {/* floating status badge — translateZ(45px) */}
         <motion.span
-          style={{ z: 45, top: -10, right: -14 }}
-          className="absolute flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-[#0d121c]/95 px-2.5 py-1 font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-cyan-300 shadow-lg backdrop-blur"
+          style={{ z: 45, top: -12, right: -16 }}
+          className="absolute flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-[#0d121c]/95 px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-300 shadow-lg backdrop-blur"
         >
-          <span className="size-1.5 animate-pulse-dot rounded-full bg-cyan-400" />
+          <span className="size-2 animate-pulse-dot rounded-full bg-cyan-400" />
           SYS // ACTIVE
         </motion.span>
       </motion.div>

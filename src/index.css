@@ -212,3 +212,9 @@
     background: #fff;
   }
 }
+
+.avatar-hq {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  image-rendering: smooth;
+}
