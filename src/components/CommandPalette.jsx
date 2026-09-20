@@ -48,6 +48,20 @@ function buildItems(onOpenResume) {
           run: () => data.projects.systems[0].github,
         },
         {
+          id: 'jump-playground',
+          label: 'Open System Playground',
+          hint: 'Diff · AST · SQL guard console',
+          icon: Terminal,
+          run: () => '#playground',
+        },
+        {
+          id: 'jump-oss',
+          label: 'Open Source Logs',
+          hint: 'Problem → solution → impact',
+          icon: GitPullRequest,
+          run: () => '#oss-logs',
+        },
+        {
           id: 'jump-exit',
           label: 'Review Experience',
           hint: 'Roles & education',

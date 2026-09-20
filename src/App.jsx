@@ -6,9 +6,11 @@ import FloatingHeader from './components/FloatingHeader'
 import HeroSection from './components/HeroSection'
 import CommandPalette from './components/CommandPalette'
 import ResumeModal from './components/ResumeModal'
-import TelemetryConsole from './components/TelemetryConsole'
+import TelemetryHub from './components/TelemetryHub'
 import EngineeringRadar from './components/EngineeringRadar'
+import SystemPlayground from './components/SystemPlayground'
 import ProjectBento from './components/ProjectBento'
+import OpenSourceLogs from './components/OpenSourceLogs'
 import ExperienceTimeline from './components/ExperienceTimeline'
 import ArsenalTabs from './components/ArsenalTabs'
 import LightweightSparkles from './components/LightweightSparkles'
@@ -145,7 +147,7 @@ export default function App() {
           </Section>
 
           <Section>
-            <TelemetryConsole />
+            <TelemetryHub />
           </Section>
 
           <Section>
@@ -153,7 +155,15 @@ export default function App() {
           </Section>
 
           <Section>
+            <SystemPlayground />
+          </Section>
+
+          <Section>
             <ProjectBento />
+          </Section>
+
+          <Section>
+            <OpenSourceLogs />
           </Section>
 
           <Section className="pb-16">

@@ -18,7 +18,7 @@ export default function ExperienceTimeline() {
         <div>
           <p className="mb-2 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-cyan-400">
             <Briefcase className="size-3.5" />
-            04 / background &amp; career
+            06 / background &amp; career
           </p>
           <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Background &amp; Career
