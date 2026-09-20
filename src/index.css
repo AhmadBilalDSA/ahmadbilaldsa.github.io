@@ -112,7 +112,7 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    overflow-x: clip;
+    overflow-x: hidden;
   }
 
   ::selection {
@@ -220,5 +220,28 @@
 }
 
 .card-bevel {
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.07), var(--shadow-card, none);
-}
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.07), var(--shadow-card, none);
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-edge) transparent;
+    scrollbar-gutter: stable;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-edge);
+    border-radius: 999px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-edge-soft);
+  }

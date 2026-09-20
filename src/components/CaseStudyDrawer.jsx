@@ -48,7 +48,7 @@ export default function CaseStudyDrawer() {
             role="dialog"
             aria-modal="true"
             aria-label={study.title}
-            className="fixed inset-y-0 right-0 z-[70] w-full max-w-xl overflow-y-auto border-l border-slate-800/80 bg-[#0a0e17] p-6 text-slate-200 sm:p-8"
+            className="fixed inset-y-0 right-0 z-[70] h-full w-full max-w-2xl overflow-y-auto custom-scrollbar border-l border-slate-800/80 bg-[#0a0e17] px-6 py-8 text-slate-200 shadow-2xl sm:px-10 sm:py-10 lg:max-w-3xl"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
@@ -56,11 +56,13 @@ export default function CaseStudyDrawer() {
           >
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
-                <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-cyan-400">
+                <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-cyan-400">
                   deep-dive · case study breakdown
                 </p>
-                <h2 className="mt-2 text-xl font-bold leading-snug text-white sm:text-2xl">{study.title}</h2>
-                <div className="mt-3 flex flex-wrap items-center gap-2">
+                <h2 className="text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl">
+                  {study.title}
+                </h2>
+                <div className="mt-3 flex flex-wrap gap-2">
                   <span className="inline-flex items-center rounded-full border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 font-mono text-[11px] uppercase tracking-wide text-cyan-300">
                     {study.role}
                   </span>
@@ -73,7 +75,7 @@ export default function CaseStudyDrawer() {
                 type="button"
                 onClick={close}
                 aria-label="Close case study"
-                className="grid size-9 shrink-0 place-items-center rounded-lg border border-slate-700/70 bg-white/[0.03] text-slate-400 transition-colors hover:border-rose-500/50 hover:text-rose-300"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-800/80 text-slate-400 transition-colors hover:bg-slate-700 hover:text-white"
               >
                 <X className="size-4" />
               </button>
@@ -82,14 +84,16 @@ export default function CaseStudyDrawer() {
             <div className="mt-8 space-y-8">
               <div>
                 <SectionTitle icon={Activity}>The Bottleneck &amp; Context</SectionTitle>
-                <p className="text-sm leading-relaxed text-slate-300">{study.challenge}</p>
+                <p className="break-words text-sm leading-relaxed text-slate-300 sm:text-base">{study.challenge}</p>
               </div>
 
               <div>
                 <SectionTitle icon={Layers}>Architectural Pipeline</SectionTitle>
-                <div className="relative overflow-hidden rounded-xl border border-slate-800 bg-[#0c1017] card-bevel p-4">
+                <div className="relative overflow-hidden rounded-xl border border-slate-800 bg-[#07090e] card-bevel p-4 sm:p-5">
                   <span className="absolute inset-y-0 left-0 w-0.5 bg-gradient-to-b from-cyan-400/80 via-cyan-400/30 to-transparent" />
-                  <p className="whitespace-pre font-mono text-[13px] leading-relaxed text-slate-200">{study.architecture}</p>
+                  <p className="break-words whitespace-pre-wrap font-mono text-xs leading-relaxed text-cyan-300/90 sm:text-sm">
+                    {study.architecture}
+                  </p>
                 </div>
               </div>
 
@@ -97,13 +101,13 @@ export default function CaseStudyDrawer() {
                 <SectionTitle icon={TrendingUp} accent="text-emerald-400">
                   Quantified Impact
                 </SectionTitle>
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
                   {study.metrics.map((metric) => (
                     <div
                       key={metric}
-                      className="rounded-xl border border-slate-800/80 bg-surface/90 card-bevel p-4 transition-colors hover:border-emerald-500/30"
+                      className="flex flex-col justify-between rounded-xl border border-emerald-500/20 bg-[#0d121c] card-bevel p-4"
                     >
-                      <p className="whitespace-pre font-mono text-sm font-semibold leading-snug text-emerald-300">{metric}</p>
+                      <p className="break-words text-xs font-medium leading-snug text-emerald-300 sm:text-sm">{metric}</p>
                     </div>
                   ))}
                 </div>
@@ -115,7 +119,7 @@ export default function CaseStudyDrawer() {
                   {study.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="inline-flex items-center rounded-lg border border-cyan-500/20 bg-cyan-500/[0.06] px-3 py-1.5 font-mono text-xs text-cyan-300"
+                      className="rounded-lg border border-cyan-500/20 bg-cyan-950/40 px-3 py-1 font-mono text-xs text-cyan-300"
                     >
                       {tech}
                     </span>
@@ -124,11 +128,11 @@ export default function CaseStudyDrawer() {
               </div>
 
               {study.highlights && (
-                <div className="rounded-xl border border-cyan-500/20 bg-cyan-500/[0.04] p-4">
+                <div className="break-words rounded-xl border border-slate-800/80 bg-slate-900/60 p-4 text-xs leading-relaxed text-slate-300 sm:text-sm">
                   <p className="mb-1.5 font-mono text-[11px] uppercase tracking-widest text-cyan-300">
                     Engineering Highlight
                   </p>
-                  <p className="whitespace-pre text-sm leading-relaxed text-slate-300">{study.highlights}</p>
+                  {study.highlights}
                 </div>
               )}
 
