@@ -6,4 +6,11 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: '/',
   plugins: [react(), tailwindcss()],
+  build: {
+    minify: 'terser',
+    sourcemap: false,
+    terserOptions: {
+      compress: { drop_console: true },
+    },
+  },
 })
