@@ -31,7 +31,7 @@ export default function ExperienceTimeline() {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        {data.metrics.experience.map((exp) => (
+        {data.metrics.experience.map((exp, expIndex) => (
           <div
             key={exp.role}
             className="shimmer-emerald rounded-2xl border border-slate-800/80 bg-surface/90 card-bevel p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40"
@@ -45,9 +45,13 @@ export default function ExperienceTimeline() {
             </div>
             <p className="text-lg font-semibold text-white">{exp.role}</p>
             <ul className="mt-4 space-y-2.5">
-              {exp.points.map((point) => (
+              {exp.points.map((point, pointIndex) => (
                 <li key={point} className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-300">
-                  <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-cyan-400" />
+                  {expIndex === 0 && pointIndex === 0 ? (
+                    <span className="timeline-node-glow mt-1.5 size-1.5 shrink-0 rounded-full bg-cyan-400" />
+                  ) : (
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-cyan-400" />
+                  )}
                   {point}
                 </li>
               ))}
