@@ -16,7 +16,6 @@ import ArsenalTabs from './components/ArsenalTabs'
 import LightweightSparkles from './components/LightweightSparkles'
 import CaseStudyDrawer from './components/CaseStudyDrawer'
 import SecurityShield from './components/SecurityShield'
-import SpotlightFX from './components/SpotlightFX'
 import { GithubIcon, InstagramIcon, LinkedinIcon } from './components/BrandIcons'
 
 function Footer() {
@@ -131,8 +130,9 @@ export default function App() {
 
   return (
     <div id="top" className="relative min-h-screen overflow-x-clip">
-      {/* Zero-WebGL backdrop: masked slate dot-grid + upper ambient glow + 2D particle sparkles */}
+      {/* Zero-WebGL backdrop: engineered grid + masked slate dot-grid + upper ambient glow + 2D particle sparkles */}
       <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <div className="bg-cyber-grid absolute inset-0" />
         <div className="ambient-dot-grid absolute inset-0" />
         <div className="absolute -top-48 left-1/2 h-[560px] w-[1100px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-cyan-500/10 via-indigo-500/10 to-transparent blur-[130px]" />
         <LightweightSparkles className="h-full" />
@@ -192,7 +192,6 @@ export default function App() {
       <ResumeModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
       <CaseStudyDrawer />
       <SecurityShield />
-      <SpotlightFX />
     </div>
   )
 }

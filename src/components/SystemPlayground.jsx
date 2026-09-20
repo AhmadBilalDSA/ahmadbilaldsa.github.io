@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRight, Braces, RefreshCw, ShieldAlert, Terminal } from 'lucide-react'
 import data from '../data/portfolioData.json'
 import { cn } from '../lib/utils'
+import SpotlightCard from './SpotlightCard'
 
 const RAW_SQL = 'SELECT u.name FROM users u WHERE u.id IN (SELECT o.user_id FROM orders o WHERE o.total > 100)'
 
@@ -225,7 +226,7 @@ export default function SystemPlayground() {
         </p>
       </div>
 
-      <div className="card-spotlight overflow-hidden rounded-2xl border border-slate-800 bg-[#0c1017] shadow-card backdrop-blur-md">
+      <SpotlightCard className="overflow-hidden rounded-2xl border border-slate-800 bg-[#0c1017] shadow-card backdrop-blur-md">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800/80 bg-elevated/70 px-4 py-2.5">
           <div className="flex items-center gap-2">
             <span className="size-3 rounded-full bg-rose/70" />
@@ -264,7 +265,7 @@ export default function SystemPlayground() {
             {SCENES[tab]}
           </div>
         </div>
-      </div>
+      </SpotlightCard>
     </section>
   )
 }

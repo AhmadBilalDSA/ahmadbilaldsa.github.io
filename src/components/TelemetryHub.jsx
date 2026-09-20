@@ -3,6 +3,7 @@ import { Activity, Cpu, Eye, GitPullRequest, Play } from 'lucide-react'
 import data from '../data/portfolioData.json'
 import { cn } from '../lib/utils'
 import useLiveTelemetry from '../hooks/useLiveTelemetry'
+import SpotlightCard from './SpotlightCard'
 
 const EDGE_VIEWS_KEY = 'ab-edge-views'
 
@@ -26,13 +27,13 @@ function useEdgeViews() {
 
 function Cell({ icon: Icon, label, accent = 'text-cyan-400', children }) {
   return (
-    <div className="card-spotlight flex h-full flex-col gap-3 rounded-xl border border-slate-800 bg-white/[0.02] p-4 transition-colors hover:border-cyan-500/30">
+    <SpotlightCard className="flex h-full flex-col gap-3 rounded-xl border border-slate-800 bg-white/[0.02] p-4 transition-colors hover:border-cyan-500/30">
       <span className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-slate-400 sm:text-xs">
         <Icon className={cn('size-3.5', accent)} />
         {label}
       </span>
       <div className="flex flex-1 flex-col justify-center gap-1.5">{children}</div>
-    </div>
+    </SpotlightCard>
   )
 }
 

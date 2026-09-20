@@ -188,31 +188,6 @@
     mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
   }
 
-  .card-spotlight {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .card-spotlight::before {
-    z-index: 0;
-    content: '';
-    position: absolute;
-    inset: -1px;
-    background: radial-gradient(
-      280px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(56, 189, 248, 0.15),
-      transparent 80%
-    );
-    pointer-events: none;
-    border-radius: inherit;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-  }
-
-  .card-spotlight:hover::before {
-    opacity: 1;
-  }
-
   .radar-sweep-line {
     position: absolute;
     top: 0;
@@ -359,3 +334,33 @@
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: var(--color-edge-soft);
   }
+
+/* Ambient Engineered Grid */
+.bg-cyber-grid {
+  background-size: 36px 36px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 85% 60% at 50% 12%, black 40%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 60% at 50% 12%, black 40%, transparent 95%);
+}
+
+/* Specular Spotlight Layer */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    380px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    var(--glow-color, rgba(56, 189, 248, 0.14)),
+    transparent 75%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}

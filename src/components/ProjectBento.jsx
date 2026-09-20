@@ -1,6 +1,7 @@
 import { ArrowUpRight, CircuitBoard, Database, GitPullRequest, History, Play, ShieldCheck } from 'lucide-react'
 import data from '../data/portfolioData.json'
 import TiltCard from './TiltCard'
+import SpotlightCard from './SpotlightCard'
 import useLiveTelemetry from '../hooks/useLiveTelemetry'
 import { GithubIcon } from './BrandIcons'
 import { formatUTC } from '../lib/datetime'
@@ -74,7 +75,7 @@ function DuckDiffTelemetry() {
     { icon: History, label: 'Last run', value: formatUTC(last_run), accent: 'text-slate-300' },
   ]
   return (
-    <div className="card-spotlight relative flex h-full flex-col gap-3 overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/90 card-bevel p-5 backdrop-blur-md transition-colors hover:border-sky-500/40">
+    <SpotlightCard className="relative flex h-full flex-col gap-3 overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/90 card-bevel p-5 backdrop-blur-md transition-colors hover:border-sky-500/40">
       <ProjectViewport src="/projects/duckdiff-preview.svg" alt="duck-diff terminal diff output" />
       <span className="grid size-10 place-items-center rounded-xl bg-sky-500/10 text-sky-300 ring-1 ring-sky-400/40">
         <Database className="size-5" />
@@ -113,7 +114,7 @@ function DuckDiffTelemetry() {
         Source
         <ArrowUpRight className="size-3.5 opacity-60" />
       </a>
-    </div>
+    </SpotlightCard>
   )
 }
 
@@ -133,7 +134,10 @@ function PrStatePill({ state, label }) {
 function UpstreamOss() {
   const prs = data.projects.openSource
   return (
-    <div className="card-spotlight relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/90 card-bevel p-5 backdrop-blur-md transition-colors hover:border-emerald-500/40 sm:p-6">
+    <SpotlightCard
+      className="relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/90 card-bevel p-5 backdrop-blur-md transition-colors hover:border-emerald-500/40 sm:p-6"
+      glowColor="rgba(16, 185, 129, 0.14)"
+    >
       <div className="flex items-start gap-3.5">
         <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-emerald-500/10 text-emerald-300 ring-1 ring-emerald-400/40">
           <GitPullRequest className="size-5" />
@@ -168,7 +172,7 @@ function UpstreamOss() {
         <span className="text-cyan-300">{data.personal.ghStats.prsAuthored} PRs authored</span>
         <span>LangChain · SQLFluff · Ibis · Semantica · py-simple-wrap</span>
       </p>
-    </div>
+    </SpotlightCard>
   )
 }
 
