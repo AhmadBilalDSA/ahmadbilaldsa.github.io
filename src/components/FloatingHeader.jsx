@@ -91,14 +91,17 @@ export default function FloatingHeader({ onOpenPalette, onOpenResume }) {
           >
             <GithubIcon className="size-4" />
           </a>
-          <button
-            type="button"
-            onClick={onOpenResume}
-            className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 px-2.5 py-1 text-xs font-semibold text-abyss transition-transform hover:-translate-y-px hover:shadow-glow sm:px-3.5 sm:py-1.5 sm:text-sm"
-          >
-            <FileText className="size-3.5" />
-            <span className="hidden sm:inline">Resume</span>
-          </button>
+          <div className="conic-glow-wrapper inline-flex align-middle">
+            <div className="conic-glow-runner" />
+            <button
+              type="button"
+              onClick={onOpenResume}
+              className="conic-glow-content inline-flex items-center gap-1.5 px-3.5 py-1.5 font-mono text-xs font-medium text-cyan-300 transition-colors hover:text-white sm:text-sm"
+            >
+              <FileText className="size-3.5" />
+              <span className="hidden sm:inline">Resume</span>
+            </button>
+          </div>
         </div>
       </div>
     </header>

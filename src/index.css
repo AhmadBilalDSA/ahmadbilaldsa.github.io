@@ -364,3 +364,47 @@
   transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 2;
 }
+
+/* Aceternity-Style Rotating Conic Border Glow */
+@keyframes conic-border-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.conic-glow-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  padding: 1px;
+}
+
+.conic-glow-runner {
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 280deg,
+    rgba(56, 189, 248, 0.85) 340deg,
+    rgba(168, 85, 247, 0.9) 360deg
+  );
+  animation: conic-border-spin 5s linear infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.conic-glow-content {
+  position: relative;
+  z-index: 1;
+  background: #090d14;
+  border-radius: calc(0.75rem - 1px);
+}
+
+.conic-glow-soft .conic-glow-runner {
+  opacity: 0.45;
+  animation-duration: 8s;
+}
