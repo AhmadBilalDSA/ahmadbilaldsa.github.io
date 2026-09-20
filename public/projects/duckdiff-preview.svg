@@ -28,14 +28,14 @@
   <circle cx="86" cy="83" r="5" fill="#f87171"/>
   <circle cx="106" cy="83" r="5" fill="#fbbf24"/>
   <circle cx="126" cy="83" r="5" fill="#4ade80"/>
-  <text x="300" y="88" fill="#64748b" font-size="12" text-anchor="middle">duck-diff run — prod.orders → stg.orders</text>
+  <text x="300" y="88" fill="#64748b" font-size="12" text-anchor="middle">duck-diff run — comparing parquet files</text>
 
   <!-- command line -->
   <text x="84" y="128" fill="#64748b" font-size="12.5" font-weight="600">$</text>
   <text x="102" y="128" fill="#e2e8f0" font-size="12.5">duck-diff run --source prod.orders --target stg.orders</text>
 
   <!-- output -->
-  <text x="84" y="152" fill="#475569" font-size="12.5">[0] Comparing 1,820 rows across 3 keys · schema version 7 …</text>
+  <text x="84" y="152" fill="#475569" font-size="12.5">[0] Comparing 1,820 rows across 3 keys · schema version 7 (prod.orders.pq → stg.orders.pq) …</text>
 
   <!-- inserted -->
   <rect x="84" y="164" width="318" height="28" rx="6" fill="#052e25"/>

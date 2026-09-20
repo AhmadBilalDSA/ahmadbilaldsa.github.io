@@ -7,6 +7,7 @@ import HeroSection from './components/HeroSection'
 import CommandPalette from './components/CommandPalette'
 import ResumeModal from './components/ResumeModal'
 import TelemetryConsole from './components/TelemetryConsole'
+import EngineeringRadar from './components/EngineeringRadar'
 import ProjectBento from './components/ProjectBento'
 import ExperienceTimeline from './components/ExperienceTimeline'
 import ArsenalTabs from './components/ArsenalTabs'
@@ -120,6 +121,10 @@ export default function App() {
 
           <Section>
             <TelemetryConsole />
+          </Section>
+
+          <Section>
+            <EngineeringRadar />
           </Section>
 
           <Section>

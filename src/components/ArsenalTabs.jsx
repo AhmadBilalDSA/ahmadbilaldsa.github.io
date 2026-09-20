@@ -51,7 +51,7 @@ export default function Arsenal() {
         <div>
           <p className="mb-2 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-cyan-400">
             <CircuitBoard className="size-3.5" />
-            04 / toolkit
+            05 / toolkit
           </p>
           <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Technical Arsenal

@@ -182,7 +182,7 @@ export default function ProjectBento() {
         <div>
           <p className="mb-2 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-cyan-400">
             <CircuitBoard className="size-3.5" />
-            02 / selected-work
+            03 / selected-work
           </p>
           <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">Cybernetic build matrix</h2>
         </div>

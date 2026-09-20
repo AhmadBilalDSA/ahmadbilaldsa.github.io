@@ -54,6 +54,7 @@
     <path d="M452 153 L466 160 L452 167 z" fill="#22d3ee"/>
     <text x="382" y="146" fill="#67e8f9" font-size="11.5" text-anchor="middle">SQLGlot</text>
     <text x="382" y="188" fill="#475569" font-size="10.5" text-anchor="middle">parse → AST</text>
+    <text x="382" y="206" fill="#475569" font-size="10.5" text-anchor="middle">flatten subquery → LATERAL</text>
   </g>
 
   <!-- AST panel -->

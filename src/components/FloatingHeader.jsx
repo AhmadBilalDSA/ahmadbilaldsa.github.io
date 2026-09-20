@@ -4,6 +4,7 @@ import { GithubIcon, LinkedinIcon } from './BrandIcons'
 
 const NAV = [
   { id: '#telemetry', label: 'Telemetry' },
+  { id: '#radar', label: 'Radar' },
   { id: '#projects', label: 'Projects' },
   { id: '#experience', label: 'Experience' },
 ]
