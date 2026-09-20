@@ -235,12 +235,12 @@
 }
 
 @media print {
-  /* Hide the entire website UI, header, backgrounds, and drawers */
+  /* Hide entire website UI, header, backgrounds, and drawers */
   body * {
     visibility: hidden !important;
   }
 
-  /* Only show the dedicated printable resume container */
+  /* Only display the isolated printable resume sheet */
   #printable-resume,
   #printable-resume * {
     visibility: visible !important;
@@ -252,21 +252,25 @@
     top: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
-    background: white !important;
-    color: black !important;
-    padding: 0 !important;
     margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
   }
 
-  /* Strip all shadows, backdrops, animations, and masks during print */
-  * {
-    background: transparent !important;
+  /* Strip all heavy visual effects and animations during printing */
+  *,
+  ::before,
+  ::after {
+    background-color: transparent !important;
     box-shadow: none !important;
     text-shadow: none !important;
     filter: none !important;
     -webkit-mask-image: none !important;
     mask-image: none !important;
     animation: none !important;
+    transition: none !important;
   }
 
   @page {
