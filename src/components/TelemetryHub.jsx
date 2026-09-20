@@ -27,7 +27,7 @@ function useEdgeViews() {
 function Cell({ icon: Icon, label, accent = 'text-cyan-400', children }) {
   return (
     <div className="flex h-full flex-col gap-3 rounded-xl border border-slate-800 bg-white/[0.02] p-4 transition-colors hover:border-cyan-500/30">
-      <span className="flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-slate-400">
+      <span className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-slate-400 sm:text-xs">
         <Icon className={cn('size-3.5', accent)} />
         {label}
       </span>
@@ -77,7 +77,7 @@ export default function TelemetryHub() {
           </span>
         </div>
 
-        <div className="grid gap-3 p-4 sm:grid-cols-2 sm:p-5 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 p-4 sm:grid-cols-2 sm:gap-4 sm:p-5 lg:grid-cols-4">
           <Cell icon={Cpu} label="system pulse" accent="text-emerald-400">
             <div className="flex items-center gap-2">
               <span className="relative flex size-2.5">

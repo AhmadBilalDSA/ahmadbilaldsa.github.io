@@ -41,12 +41,16 @@ export default function FloatingHeader({ onOpenPalette, onOpenResume }) {
           </span>
         </div>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
           {NAV.map((item) => (
             <a
               key={item.id}
               href={item.id}
-              className="rounded-lg px-3 py-1.5 text-sm font-medium text-slate-300 transition-colors hover:bg-white/[0.05] hover:text-cyan-300"
+              className={`rounded-lg px-3 py-1.5 text-sm font-medium text-slate-300 transition-colors hover:bg-white/[0.05] hover:text-cyan-300 ${
+                item.id === '#radar' || item.id === '#playground' || item.id === '#projects'
+                  ? 'hidden xl:inline-flex'
+                  : ''
+              }`}
             >
               {item.label}
             </a>
@@ -57,7 +61,7 @@ export default function FloatingHeader({ onOpenPalette, onOpenResume }) {
           <button
             type="button"
             onClick={onOpenPalette}
-            className="hidden items-center gap-2 rounded-lg border border-slate-700/70 bg-white/[0.03] px-2.5 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-cyan-500/50 hover:text-cyan-300 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-lg border border-slate-700/70 bg-white/[0.03] px-2.5 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-cyan-500/50 hover:text-cyan-300 sm:flex"
             aria-label="Open command palette"
           >
             <Search className="size-3.5" />

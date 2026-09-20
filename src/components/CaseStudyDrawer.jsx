@@ -36,7 +36,7 @@ export default function CaseStudyDrawer() {
         <>
           <motion.div
             key="backdrop"
-            className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -48,7 +48,7 @@ export default function CaseStudyDrawer() {
             role="dialog"
             aria-modal="true"
             aria-label={study.title}
-            className="fixed inset-y-0 right-0 z-[70] h-full w-full max-w-2xl overflow-y-auto custom-scrollbar border-l border-slate-800/80 bg-[#0a0e17] px-6 py-8 text-slate-200 shadow-2xl sm:px-10 sm:py-10 lg:max-w-3xl"
+            className="fixed inset-y-0 right-0 z-50 h-full w-full overflow-y-auto custom-scrollbar border-l border-slate-800 bg-[#0a0e17] p-5 text-slate-200 shadow-2xl sm:max-w-2xl sm:p-8 lg:max-w-3xl md:p-10"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
@@ -89,7 +89,7 @@ export default function CaseStudyDrawer() {
 
               <div>
                 <SectionTitle icon={Layers}>Architectural Pipeline</SectionTitle>
-                <div className="relative overflow-hidden rounded-xl border border-slate-800 bg-[#07090e] card-bevel p-4 sm:p-5">
+                <div className="relative overflow-x-auto rounded-xl border border-slate-800 bg-[#07090e] card-bevel p-4 max-w-full sm:p-5">
                   <span className="absolute inset-y-0 left-0 w-0.5 bg-gradient-to-b from-cyan-400/80 via-cyan-400/30 to-transparent" />
                   <p className="break-words whitespace-pre-wrap font-mono text-xs leading-relaxed text-cyan-300/90 sm:text-sm">
                     {study.architecture}
@@ -101,7 +101,7 @@ export default function CaseStudyDrawer() {
                 <SectionTitle icon={TrendingUp} accent="text-emerald-400">
                   Quantified Impact
                 </SectionTitle>
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   {study.metrics.map((metric) => (
                     <div
                       key={metric}

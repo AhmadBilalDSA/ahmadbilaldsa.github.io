@@ -81,7 +81,7 @@ function DiffView() {
   return (
     <>
       <TabHeader prompt={TABS[0].prompt} repo={TABS[0].repo} />
-      <div className="space-y-2 rounded-xl border border-slate-800 bg-abyss/70 p-4 font-mono text-[13px] leading-relaxed">
+      <div className="mobile-touch-scroll max-w-full space-y-2 overflow-x-auto rounded-xl border border-slate-800 bg-abyss/70 p-4 font-mono text-[13px] leading-relaxed">
         <p className="text-emerald-300">
           + [INSERTED] {rows.inserted.toLocaleString()} rows (partition: 2026-09-Q3)
         </p>
@@ -125,9 +125,9 @@ function AstView() {
         </button>
       </div>
 
-      <div className="whitespace-pre rounded-xl border border-slate-800 bg-abyss/70 p-4 font-mono text-[13px] leading-relaxed text-slate-300">
-        {mode === 'raw' ? RAW_SQL : AST_TREE}
-      </div>
+      <div className="mobile-touch-scroll max-w-full whitespace-pre overflow-x-auto rounded-xl border border-slate-800 bg-abyss/70 p-4 font-mono text-[13px] leading-relaxed text-slate-300">
+          {mode === 'raw' ? RAW_SQL : AST_TREE}
+        </div>
 
       {mode === 'ast' && (
         <p className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 font-mono text-[11px] text-emerald-300">
@@ -230,7 +230,7 @@ export default function SystemPlayground() {
           <span className="font-mono text-[10px] uppercase tracking-wider text-slate-600">zsh · local · {tab}</span>
         </div>
 
-        <div className="flex overflow-x-auto border-b border-slate-800/80">
+        <div className="mobile-touch-scroll flex overflow-x-auto border-b border-slate-800/80">
           {TABS.map((t) => {
             const active = tab === t.id
             const Icon = t.icon
