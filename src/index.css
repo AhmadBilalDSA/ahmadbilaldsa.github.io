@@ -6,8 +6,8 @@
   --font-mono:
     'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --color-abyss: #0b0f17;
-  --color-surface: #111827;
+  --color-abyss: #07090e;
+  --color-surface: #0d121c;
   --color-elevated: #16202e;
   --color-edge: #1e293b;
   --color-edge-soft: #28364d;
@@ -164,19 +164,33 @@
 
   .bg-grid-mesh {
     background-color: #07090e;
-    background-image:
-      linear-gradient(rgba(34, 211, 238, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(34, 211, 238, 0.045) 1px, transparent 1px),
-      radial-gradient(58% 42% at 50% -4%, rgba(56, 189, 248, 0.16), transparent 62%),
-      radial-gradient(46% 38% at 90% 6%, rgba(139, 92, 246, 0.12), transparent 60%),
-      radial-gradient(52% 40% at 6% 92%, rgba(16, 185, 129, 0.1), transparent 62%);
-    background-size:
-      56px 56px,
-      56px 56px,
-      100% 100%,
-      100% 100%,
-      100% 100%;
+    background-image: radial-gradient(#1e293b 1px, transparent 1px);
+    background-size: 28px 28px;
     background-attachment: fixed;
+  }
+
+  .border-beam {
+    background: conic-gradient(
+      from var(--beam-angle, 0deg),
+      transparent 0deg,
+      transparent 292deg,
+      rgba(34, 211, 238, 0.9) 340deg,
+      rgba(52, 211, 153, 0.7) 360deg
+    );
+    filter: blur(2px);
+    animation: beam-spin 5s linear infinite;
+  }
+
+  @property --beam-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  @keyframes beam-spin {
+    to {
+      --beam-angle: 360deg;
+    }
   }
 }
 
@@ -188,6 +202,7 @@
   body.print-resume .print-resume-area,
   body.print-resume .print-resume-area * {
     visibility: visible;
+    color: #18181b !important;
   }
 
   body.print-resume .print-resume-area {
@@ -195,6 +210,5 @@
     inset: 0;
     overflow: visible;
     background: #fff;
-    color: #18181b;
   }
 }

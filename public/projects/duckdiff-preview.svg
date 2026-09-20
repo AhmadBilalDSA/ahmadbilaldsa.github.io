@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" font-family="'JetBrains Mono', ui-monospace, monospace">
+  <defs>
+    <pattern id="bg-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1.2" cy="1.2" r="1.2" fill="#1e293b" opacity="0.45"/>
+    </pattern>
+    <radialGradient id="ambience" cx="18%" cy="10%" r="75%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.12"/>
+      <stop offset="55%" stop-color="#22d3ee" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#07090e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="topline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="340" fill="#07090e"/>
+  <rect width="800" height="340" fill="url(#bg-dots)"/>
+  <rect width="800" height="340" fill="url(#ambience)"/>
+
+  <text x="34" y="44" fill="#34d399" font-size="13" font-weight="600" letter-spacing="3">DUCK-DIFF · AUTOMATED DATA DIFFING</text>
+
+  <!-- terminal window -->
+  <rect x="60" y="66" width="680" height="212" rx="12" fill="#0d121c" stroke="#1e293b"/>
+  <rect x="60" y="66" width="680" height="34" rx="12" fill="#111a29" stroke="#1e293b"/>
+  <rect x="60" y="86" width="680" height="14" fill="#111a29"/>
+  <circle cx="86" cy="83" r="5" fill="#f87171"/>
+  <circle cx="106" cy="83" r="5" fill="#fbbf24"/>
+  <circle cx="126" cy="83" r="5" fill="#4ade80"/>
+  <text x="300" y="88" fill="#64748b" font-size="12" text-anchor="middle">duck-diff run — prod.orders → stg.orders</text>
+
+  <!-- command line -->
+  <text x="84" y="128" fill="#64748b" font-size="12.5" font-weight="600">$</text>
+  <text x="102" y="128" fill="#e2e8f0" font-size="12.5">duck-diff run --source prod.orders --target stg.orders</text>
+
+  <!-- output -->
+  <text x="84" y="152" fill="#475569" font-size="12.5">[0] Comparing 1,820 rows across 3 keys · schema version 7 …</text>
+
+  <!-- inserted -->
+  <rect x="84" y="164" width="318" height="28" rx="6" fill="#052e25"/>
+  <text x="98" y="183" fill="#4ade80" font-size="12.5" font-weight="700">+ inserted: 1,420 rows</text>
+  <text x="414" y="183" fill="#6ee7b7" font-size="11">prod.orders</text>
+
+  <!-- deleted -->
+  <rect x="84" y="198" width="280" height="28" rx="6" fill="#3f1113"/>
+  <text x="98" y="217" fill="#f87171" font-size="12.5" font-weight="700">- deleted: 12 rows</text>
+  <text x="376" y="217" fill="#fca5a5" font-size="11">stg.regions</text>
+
+  <!-- modified -->
+  <rect x="84" y="232" width="300" height="28" rx="6" fill="#2a1c05"/>
+  <text x="98" y="251" fill="#fbbf24" font-size="12.5" font-weight="700">~ modified: 388 rows</text>
+  <text x="396" y="251" fill="#fcd34d" font-size="11">3 key collisions</text>
+
+  <!-- GitHub Actions CI badge -->
+  <g>
+    <rect x="500" y="146" width="240" height="34" rx="17" fill="#0d121c" stroke="#334155"/>
+    <g stroke="#94a3b8" stroke-width="2.4" fill="none" stroke-linecap="round">
+      <path d="M514 152h24" opacity="0.45"/>
+      <path d="M517 159h17" opacity="0.45"/>
+      <path d="M514 166h24" opacity="0.45"/>
+      <path d="M517 173h17" opacity="0.45"/>
+    </g>
+    <circle cx="520" cy="163" r="9.5" fill="#12262b" stroke="#22d3ee" stroke-width="1.4"/>
+    <path d="M515 163 l4 4 l7 -8" stroke="#4ade80" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="538" y="162" fill="#e2e8f0" font-size="12.5" font-weight="600">GitHub Actions</text>
+    <text x="538" y="176" fill="#4ade80" font-size="11" font-weight="600">passing · telemetry-updated</text>
+  </g>
+
+  <!-- status line -->
+  <line x1="60" y1="292" x2="740" y2="292" stroke="url(#topline)" stroke-width="1.5"/>
+  <text x="84" y="316" fill="#475569" font-size="11.5">duck-diff: green · 1,820 / 1,820 reconciled</text>
+  <text x="700" y="316" fill="#34d399" font-size="11.5">● LIVE</text>
+</svg>

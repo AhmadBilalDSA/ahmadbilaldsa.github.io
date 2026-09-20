@@ -3,9 +3,9 @@ import { ArrowUpRight } from 'lucide-react'
 import { GithubIcon } from './BrandIcons'
 
 const badgeStyles = {
-  accent: 'bg-cyan-500/10 text-cyan-300 ring-cyan-400/40',
-  sky: 'bg-sky-500/10 text-sky-300 ring-sky-400/40',
-  mint: 'bg-emerald-500/10 text-emerald-300 ring-emerald-400/40',
+  accent: 'bg-cyan-500/10 text-cyan-300 border border-cyan-500/20',
+  sky: 'bg-sky-500/10 text-sky-300 border border-sky-500/20',
+  mint: 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/20',
 }
 
 const prStateStyles = {
@@ -35,7 +35,7 @@ function PrStatePill({ state, label }) {
   )
 }
 
-export default function TiltCard({ project, category, featured = false, featuredMedia = null }) {
+export default function TiltCard({ project, category, featured = false, featuredMedia = null, media = null }) {
   const cx = useMotionValue(0.5)
   const cy = useMotionValue(0.5)
 
@@ -74,7 +74,7 @@ export default function TiltCard({ project, category, featured = false, featured
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
-      <div className="relative h-full overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/70 shadow-card backdrop-blur-md transition-all duration-300 hover:border-cyan-500/30">
+      <div className="relative h-full overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/90 shadow-card backdrop-blur-md transition-all duration-300 hover:border-cyan-500/40">
         <div
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           style={{ background: glare }}
@@ -84,8 +84,17 @@ export default function TiltCard({ project, category, featured = false, featured
         </div>
 
         {featured && featuredMedia ? (
-          <div className="relative grid gap-5 p-5 sm:grid-cols-[300px_1fr] sm:gap-6 sm:p-6">
-            <div className="shrink-0">{featuredMedia}</div>
+          <div className="relative flex flex-col p-5 sm:p-6">
+            {featuredMedia}
+            <div className="flex min-w-0 flex-col gap-4">
+              <CardHead project={project} category={category} tint={tint} />
+              <p className="text-sm leading-relaxed text-slate-300">{project.description}</p>
+              <CardFooter project={project} tint={tint} />
+            </div>
+          </div>
+        ) : media ? (
+          <div className="relative flex h-full flex-col p-5 sm:p-6 [transform:translateZ(24px)]">
+            {media}
             <div className="flex min-w-0 flex-col gap-4">
               <CardHead project={project} category={category} tint={tint} />
               <p className="text-sm leading-relaxed text-slate-300">{project.description}</p>
@@ -112,8 +121,8 @@ function CardHead({ project, category, tint }) {
           <category.icon className="size-5" />
         </span>
         <div className="min-w-0">
-          <h3 className="truncate font-semibold text-slate-50">{project.name}</h3>
-          <p className="text-sm text-slate-400">{project.tagline}</p>
+          <h3 className="truncate font-semibold text-white">{project.name}</h3>
+          <p className="text-sm text-slate-300">{project.tagline}</p>
         </div>
       </div>
 
@@ -161,7 +170,7 @@ function CardFooter({ project, tint }) {
 function Badge({ className = '', children }) {
   return (
     <span
-      className={`inline-flex items-center rounded-full px-3 py-1 font-mono text-[11px] font-medium ring-1 ${className}`}
+      className={`inline-flex items-center rounded-full border px-3 py-1 font-mono text-[11px] font-medium ${className}`}
     >
       {children}
     </span>

@@ -27,7 +27,7 @@ export default function TelemetryConsole() {
         01 / live-telemetry
       </p>
 
-      <div className="overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/80 shadow-card backdrop-blur">
+      <div className="overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/90 shadow-card backdrop-blur">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800/80 bg-elevated/70 px-4 py-2.5">
           <div className="flex items-center gap-2">
             <span className="size-3 rounded-full bg-rose/70" />
@@ -56,14 +56,14 @@ export default function TelemetryConsole() {
           className="grid gap-2 p-4 sm:grid-cols-2 sm:p-5 lg:grid-cols-4"
         >
           <Stat label="Total runs" value={runs_count.toLocaleString()} accent="text-cyan-300" icon={Play} />
-          <Stat label="Active PRs" value={String(open_prs)} accent="text-slate-50" icon={GitPullRequest} />
+          <Stat label="Active PRs" value={String(open_prs)} accent="text-white" icon={GitPullRequest} />
           <Stat
             label="Upstream health"
             value={health}
             accent={online ? 'text-emerald-300' : 'text-amber-300'}
             icon={ShieldCheck}
           />
-          <Stat label="Last run" value={formatUTC(last_run)} accent="text-slate-400" icon={History} />
+          <Stat label="Last run" value={formatUTC(last_run)} accent="text-slate-300" icon={History} />
         </motion.div>
 
         <p className="flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-slate-800/80 px-4 py-2.5 font-mono text-[11px] text-slate-600">

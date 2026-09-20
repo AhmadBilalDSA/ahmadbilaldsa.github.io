@@ -55,14 +55,14 @@ export default function SqlLintDemo() {
   }
 
   return (
-    <section className="h-full rounded-2xl border border-slate-800/80 bg-surface/70 p-5 shadow-card backdrop-blur-sm sm:p-6">
+    <section className="h-full rounded-2xl border border-slate-800/80 bg-surface/90 p-5 shadow-card backdrop-blur-sm sm:p-6">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-cyan-400">
             <GitPullRequest className="size-3.5" />
             sqlean-lint PRO — live demo
           </p>
-          <p className="mt-1.5 text-sm text-slate-400">
+          <p className="mt-1.5 text-sm text-slate-300">
             Unformatted SQL in, AST-optimized SQL out. Press Run Lint.
           </p>
         </div>

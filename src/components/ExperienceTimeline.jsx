@@ -20,11 +20,11 @@ export default function ExperienceTimeline() {
             <Briefcase className="size-3.5" />
             03 / background &amp; career
           </p>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-50 sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Background &amp; Career
           </h2>
         </div>
-        <p className="max-w-sm text-sm text-slate-400">
+        <p className="max-w-sm text-sm text-slate-300">
           Two years of production BI and instructor-led analytics training, backed by a finance degree and IBM.
         </p>
       </div>
@@ -33,16 +33,16 @@ export default function ExperienceTimeline() {
         {data.metrics.experience.map((exp) => (
           <div
             key={exp.role}
-            className="rounded-2xl border border-slate-800/80 bg-surface/70 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40"
+            className="rounded-2xl border border-slate-800/80 bg-surface/90 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40"
           >
             <div className="flex items-start justify-between gap-3">
               <CardShell icon={Building2} label={exp.organization} />
-              <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wide text-cyan-300">
+              <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wide text-cyan-300">
                 <Calendar className="size-3" />
                 {exp.period}
               </span>
             </div>
-            <p className="text-lg font-semibold text-slate-50">{exp.role}</p>
+            <p className="text-lg font-semibold text-white">{exp.role}</p>
             <ul className="mt-4 space-y-2.5">
               {exp.points.map((point) => (
                 <li key={point} className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-300">
@@ -54,10 +54,10 @@ export default function ExperienceTimeline() {
           </div>
         ))}
 
-        <div className="rounded-2xl border border-slate-800/80 bg-surface/70 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40">
+        <div className="rounded-2xl border border-slate-800/80 bg-surface/90 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40">
           <CardShell icon={GraduationCap} label="Education" accent="text-sky-400" />
-          <p className="text-lg font-semibold text-slate-50">{data.metrics.education.degree}</p>
-          <p className="mt-1 text-sm text-slate-400">{data.metrics.education.school}</p>
+          <p className="text-lg font-semibold text-white">{data.metrics.education.degree}</p>
+          <p className="mt-1 text-sm text-slate-300">{data.metrics.education.school}</p>
           <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-sky-400/30 bg-sky-500/10 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wide text-sky-300">
             <Calendar className="size-3" />
             {data.metrics.education.graduation}
@@ -75,7 +75,7 @@ export default function ExperienceTimeline() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-800/80 bg-surface/70 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-500/40">
+        <div className="rounded-2xl border border-slate-800/80 bg-surface/90 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-500/40">
           <CardShell icon={Award} label="Certifications" accent="text-emerald-400" />
           <ul className="space-y-3">
             {data.metrics.certifications.map((cert) => (
@@ -87,7 +87,7 @@ export default function ExperienceTimeline() {
                 </span>
               </li>
             ))}
-            <li className="rounded-xl border border-slate-800 bg-white/[0.03] px-3 py-2.5 text-xs leading-relaxed text-slate-400">
+            <li className="rounded-xl border border-slate-800 bg-white/[0.03] px-3 py-2.5 text-xs leading-relaxed text-slate-300">
               Python · SQL · Data Analysis · Predictive Modeling · Machine Learning workflows.
             </li>
           </ul>

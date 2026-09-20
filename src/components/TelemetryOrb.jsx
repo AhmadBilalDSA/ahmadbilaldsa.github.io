@@ -16,7 +16,7 @@ export default function TelemetryOrb() {
   const runsText = useTransform(runs, (v) => Math.round(v).toLocaleString())
 
   return (
-    <div className="relative flex h-full flex-col justify-between gap-5 overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/70 p-5 shadow-card backdrop-blur-sm sm:p-6">
+    <div className="relative flex h-full flex-col justify-between gap-5 overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/90 p-5 shadow-card backdrop-blur-sm sm:p-6">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-16 -top-16 size-56 rounded-full bg-emerald-500/10 blur-3xl"
@@ -28,7 +28,7 @@ export default function TelemetryOrb() {
             <Activity className="size-3.5" />
             Live Telemetry
           </p>
-          <p className="mt-1.5 text-sm text-slate-400">duck-diff pipeline health</p>
+          <p className="mt-1.5 text-sm text-slate-300">duck-diff pipeline health</p>
         </div>
         <span
           className={`inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide ${
@@ -57,11 +57,11 @@ export default function TelemetryOrb() {
           </span>
         </div>
         <div className="min-w-0">
-          <p className="font-mono text-2xl font-bold text-slate-50">
+          <p className="font-mono text-2xl font-bold text-white">
             <motion.span>{runsText}</motion.span>
             <span className="ml-1 text-sm font-medium text-slate-500">runs</span>
           </p>
-          <p className="mt-1 flex items-center gap-1.5 text-xs text-slate-400">
+          <p className="mt-1 flex items-center gap-1.5 text-xs text-slate-300">
             <History className="size-3.5 text-cyan-400" />
             last sync {formatUTC(last_run)}
           </p>

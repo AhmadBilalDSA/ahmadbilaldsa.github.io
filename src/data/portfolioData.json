@@ -28,7 +28,7 @@
     "systems": [
       {
         "name": "MockForge",
-        "tagline": "Native AI mock interview simulator & system design workbench",
+        "tagline": "System design studio & AI mock interviewer",
         "description": "Desktop-first AI mock interview simulator wiring Rust and Tauri v2 to React Flow system-design boards. Offline heuristic feedback grades every response on-device — zero cloud latency. Interactive canvas ships an integrated SPOF / cache-pressure analyzer, and Windows SAPI enables native speech.",
         "tech": ["Rust", "Tauri v2", "React Flow", "TypeScript", "Tailwind CSS"],
         "github": "https://github.com/AhmadBilalDSA?q=mockforge",
@@ -38,7 +38,7 @@
     "data": [
       {
         "name": "duck-diff",
-        "tagline": "Automated data diff pipeline & visual lineage engine",
+        "tagline": "Automated CI/CD data diffing & visual lineage engine",
         "description": "Constant-memory reconciliation engine powered by DuckDB SQL. Headless CI/CD telemetry tracking surfaces automated regression detection across data pipelines, with a scheduled daily health dispatch to Discord — the same telemetry that feeds this page.",
         "tech": ["DuckDB", "Python", "GitHub Actions", "Discord Webhooks"],
         "github": "https://github.com/AhmadBilalDSA/duck-diff",
@@ -151,7 +151,7 @@
       {
         "role": "Junior Data Scientist & Analyst",
         "organization": "Timmy's Pizza",
-        "org": "Timmy's Pizza · 2024 - 2026",
+        "org": "Timmy's Pizza · 2-Year Tenure",
         "period": "2024 - 2026",
         "badge": "2024 - 2026",
         "points": [

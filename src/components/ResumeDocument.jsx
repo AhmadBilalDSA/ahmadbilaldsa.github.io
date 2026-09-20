@@ -40,7 +40,7 @@ export default function ResumeDocument() {
   return (
     <div className="print-resume-area">
       <header className="border-b border-slate-800/80 px-6 py-6 sm:px-8">
-        <h1 className="text-3xl font-extrabold tracking-tight text-slate-50">
+        <h1 className="text-3xl font-extrabold tracking-tight text-white">
           Ahmad Bilal
         </h1>
         <p className="mt-1 bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-[15px] font-medium text-transparent">
@@ -113,8 +113,8 @@ export default function ResumeDocument() {
               />
               <div>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="text-[15px] font-semibold text-slate-50">Upstream Open Source</h3>
-                  <span className="font-mono text-[11px] text-slate-500">53 PRs · 24 merged · 13 open</span>
+                  <h3 className="text-[15px] font-semibold text-white">Upstream Open Source</h3>
+                  <span className="font-mono text-[11px] text-white0">53 PRs · 24 merged · 13 open</span>
                 </div>
                 <ul className="mt-3 grid gap-2">
                   {PR_LINKS.map((pr) => (
@@ -125,7 +125,7 @@ export default function ResumeDocument() {
                       <a className="font-medium text-cyan-300 transition-colors hover:text-cyan-200" href={pr.url} target="_blank" rel="noreferrer noopener">
                         {pr.repo} {pr.pr}
                       </a>
-                      <span className="text-slate-500">— {pr.note}</span>
+                      <span className="text-white0">— {pr.note}</span>
                     </li>
                   ))}
                 </ul>
@@ -137,8 +137,8 @@ export default function ResumeDocument() {
             <div className="space-y-5">
               <div>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="text-[15px] font-semibold text-slate-50">Power BI &amp; Analytics Trainer</h3>
-                  <span className="font-mono text-[11px] text-slate-500">PNY Trainings / NAVTTC · 2026</span>
+                  <h3 className="text-[15px] font-semibold text-white">Power BI &amp; Analytics Trainer</h3>
+                  <span className="font-mono text-[11px] text-white0">PNY Trainings / NAVTTC · 2026</span>
                 </div>
                 <ul className="mt-2.5 space-y-2 text-[13px] leading-relaxed text-slate-300">
                   <li className="flex gap-2.5"><span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-cyan-400" />Instructed Star Schema dimensional modeling, advanced DAX measures, and Power Query ETL pipelines.</li>
@@ -148,8 +148,8 @@ export default function ResumeDocument() {
               </div>
               <div>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="text-[15px] font-semibold text-slate-50">Junior Data Scientist &amp; Analyst</h3>
-                  <span className="font-mono text-[11px] text-slate-500">Timmy's Pizza · 2024 - 2026</span>
+                  <h3 className="text-[15px] font-semibold text-white">Junior Data Scientist &amp; Analyst</h3>
+                  <span className="font-mono text-[11px] text-white0">Timmy's Pizza · 2024 - 2026</span>
                 </div>
                 <ul className="mt-2.5 space-y-2 text-[13px] leading-relaxed text-slate-300">
                   <li className="flex gap-2.5"><span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-cyan-400" />Automated operational telemetry, inventory forecasting, and data audits using Python, SQL, and Excel.</li>
@@ -162,14 +162,14 @@ export default function ResumeDocument() {
 
           <Section label="Education">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <h3 className="text-[15px] font-semibold text-slate-50">BS (Hons) Accounting &amp; Finance</h3>
-              <span className="font-mono text-[11px] text-slate-500">Graduated {data.metrics.education.graduation}</span>
+              <h3 className="text-[15px] font-semibold text-white">BS (Hons) Accounting &amp; Finance</h3>
+              <span className="font-mono text-[11px] text-white0">Graduated {data.metrics.education.graduation}</span>
             </div>
             <p className="mt-1 inline-flex items-center gap-2 text-[13px] text-slate-400">
               <Building2 className="size-4" />
               {data.metrics.education.school}
             </p>
-            <p className="mt-2 text-[13px] text-slate-500">
+            <p className="mt-2 text-[13px] text-white0">
               Coursework: {data.metrics.education.coursework.join(' · ')}.
             </p>
           </Section>
@@ -180,7 +180,7 @@ export default function ResumeDocument() {
             <div className="space-y-4">
               {Object.entries(ARSENAL_TITLES).map(([key, title]) => (
                 <div key={key}>
-                  <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.16em] text-slate-500">
+                  <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.16em] text-white0">
                     {title}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -224,7 +224,7 @@ export default function ResumeDocument() {
           </a>
         </aside>
       </div>
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-1 border-t border-slate-800/80 px-6 py-4 font-mono text-[11px] text-slate-500">
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-1 border-t border-slate-800/80 px-6 py-4 font-mono text-[11px] text-white0">
         <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="size-3.5 text-emerald-400" />ATS-friendly</span>
         <span>© {new Date().getFullYear()} Ahmad Bilal · Lahore, Pakistan</span>
         <span className="ml-auto">github.com/AhmadBilalDSA/ahmadbilaldsa.github.io</span>
@@ -237,8 +237,8 @@ function ProjectRow({ name, stack, points }) {
   return (
     <div>
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 className="text-[15px] font-semibold text-slate-50">{name}</h3>
-        <span className="font-mono text-[11px] text-slate-500">{stack}</span>
+        <h3 className="text-[15px] font-semibold text-white">{name}</h3>
+        <span className="font-mono text-[11px] text-white0">{stack}</span>
       </div>
       <ul className="mt-2 space-y-1.5 text-[13px] leading-relaxed text-slate-300">
         {points.map((point) => (

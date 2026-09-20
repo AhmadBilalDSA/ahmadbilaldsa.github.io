@@ -28,26 +28,35 @@ const CATEGORY = {
 
 const ARCHITECTURE_TAGS = ['SPOF analyzer', 'Cache-pressure', 'Windows SAPI', 'Offline heuristic']
 
+function ProjectViewport({ src, alt = 'Project preview', children = null }) {
+  return (
+    <div className="w-full h-40 sm:h-44 rounded-xl overflow-hidden border border-slate-800/80 bg-[#07090e] mb-4 relative group">
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="w-full h-full object-cover object-center opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0d121c] via-transparent to-transparent pointer-events-none" />
+      {children}
+    </div>
+  )
+}
+
 function MockForgeMedia() {
   return (
-    <div className="relative h-full min-h-[210px] overflow-hidden rounded-xl border border-slate-800 bg-abyss/60">
-      <img
-        src="/projects/mockforge-preview.svg"
-        alt="MockForge Studio system-design schematic"
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-        loading="lazy"
-      />
-      <div className="absolute inset-x-0 bottom-0 flex flex-wrap gap-1.5 bg-gradient-to-t from-abyss via-abyss/85 to-transparent p-3">
+    <ProjectViewport src="/projects/mockforge-preview.svg" alt="MockForge Studio system-design schematic">
+      <div className="absolute inset-x-0 bottom-0 flex flex-wrap gap-1.5 p-3">
         {ARCHITECTURE_TAGS.map((tag) => (
           <span
             key={tag}
-            className="rounded-full border border-cyan-400/30 bg-abyss/70 px-2.5 py-0.5 font-mono text-[10px] text-cyan-300"
+            className="rounded-full border border-cyan-400/30 bg-[#0d121c]/85 px-2.5 py-0.5 font-mono text-[10px] text-cyan-300"
           >
             {tag}
           </span>
         ))}
       </div>
-    </div>
+    </ProjectViewport>
   )
 }
 
@@ -55,23 +64,24 @@ function DuckDiffTelemetry() {
   const { last_run, runs_count, open_prs, health, connected } = useLiveTelemetry()
   const rows = [
     { icon: Play, label: 'Total runs', value: runs_count.toLocaleString(), accent: 'text-cyan-300' },
-    { icon: GitPullRequest, label: 'Active PRs', value: String(open_prs), accent: 'text-slate-50' },
+    { icon: GitPullRequest, label: 'Active PRs', value: String(open_prs), accent: 'text-white' },
     {
       icon: ShieldCheck,
       label: 'Health',
       value: health,
       accent: connected ? 'text-emerald-300' : 'text-amber-300',
     },
-    { icon: History, label: 'Last run', value: formatUTC(last_run), accent: 'text-slate-400' },
+    { icon: History, label: 'Last run', value: formatUTC(last_run), accent: 'text-slate-300' },
   ]
   return (
-    <div className="relative flex h-full flex-col gap-3 overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/70 p-5 shadow-card backdrop-blur-md transition-colors hover:border-sky-500/30">
+    <div className="relative flex h-full flex-col gap-3 overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/90 p-5 shadow-card backdrop-blur-md transition-colors hover:border-sky-500/40">
+      <ProjectViewport src="/projects/duckdiff-preview.svg" alt="duck-diff terminal diff output" />
       <span className="grid size-10 place-items-center rounded-xl bg-sky-500/10 text-sky-300 ring-1 ring-sky-400/40">
         <Database className="size-5" />
       </span>
       <div>
-        <h3 className="font-semibold text-slate-50">duck-diff</h3>
-        <p className="text-sm text-slate-400">Automated data diff · visual lineage</p>
+        <h3 className="font-semibold text-white">duck-diff</h3>
+        <p className="text-sm text-slate-300">Automated CI/CD data diffing · visual lineage</p>
       </div>
       <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-slate-700/70 bg-white/[0.03] px-2.5 py-1 text-[11px] font-medium text-slate-300">
         <span
@@ -123,14 +133,14 @@ function PrStatePill({ state, label }) {
 function UpstreamOss() {
   const prs = data.projects.openSource
   return (
-    <div className="relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/70 p-5 shadow-card backdrop-blur-md transition-colors hover:border-emerald-500/30 sm:p-6">
+    <div className="relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/90 p-5 shadow-card backdrop-blur-md transition-colors hover:border-emerald-500/40 sm:p-6">
       <div className="flex items-start gap-3.5">
         <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-emerald-500/10 text-emerald-300 ring-1 ring-emerald-400/40">
           <GitPullRequest className="size-5" />
         </span>
         <div className="min-w-0">
-          <h3 className="font-semibold text-slate-50">Upstream Open Source</h3>
-          <p className="text-sm text-slate-400">Verified PRs across the ecosystem</p>
+          <h3 className="font-semibold text-white">Upstream Open Source</h3>
+          <p className="text-sm text-slate-300">Verified PRs across the ecosystem</p>
         </div>
       </div>
 
@@ -174,16 +184,16 @@ export default function ProjectBento() {
             <CircuitBoard className="size-3.5" />
             02 / selected-work
           </p>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-50 sm:text-3xl">Cybernetic build matrix</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">Cybernetic build matrix</h2>
         </div>
-        <p className="max-w-sm text-sm text-slate-400">
+        <p className="max-w-sm text-sm text-slate-300">
           Real repos, live telemetry, and verified pull requests — no placeholder filler.
         </p>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
         <TiltCard project={mockforge} category={CATEGORY.systems} featured featuredMedia={<MockForgeMedia />} />
-        <TiltCard project={sqlean} category={CATEGORY.data} />
+        <TiltCard project={sqlean} category={CATEGORY.data} media={<ProjectViewport src="/projects/sqlean-preview.svg" alt="sqlean-lint AST transform" />} />
         <DuckDiffTelemetry />
         <UpstreamOss />
       </div>

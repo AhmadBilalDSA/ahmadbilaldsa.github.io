@@ -53,11 +53,11 @@ export default function Arsenal() {
             <CircuitBoard className="size-3.5" />
             04 / toolkit
           </p>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-50 sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Technical Arsenal
           </h2>
         </div>
-        <p className="max-w-sm text-sm text-slate-400">
+        <p className="max-w-sm text-sm text-slate-300">
           Tab into the stack behind pipeline-heavy analytics, AST tooling, and native desktop builds.
         </p>
       </div>
@@ -96,14 +96,14 @@ export default function Arsenal() {
           return (
             <div
               key={`${tab}-${tool.label}`}
-              className="group flex items-center gap-4 rounded-xl border border-slate-800/80 bg-surface/70 p-4 transition-colors hover:border-cyan-500/40"
+              className="group flex items-center gap-4 rounded-xl border border-slate-800/80 bg-surface/90 p-4 transition-colors hover:border-cyan-500/40"
             >
               <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-cyan-500/10 text-cyan-300 ring-1 ring-cyan-500/30 transition-transform group-hover:scale-105">
                 <Icon className="size-5" />
               </span>
               <div className="min-w-0">
-                <p className="truncate font-semibold text-slate-50">{tool.label}</p>
-                <p className="truncate text-xs text-slate-400">{tool.detail}</p>
+                <p className="truncate font-semibold text-white">{tool.label}</p>
+                <p className="truncate text-xs text-slate-300">{tool.detail}</p>
               </div>
             </div>
           )

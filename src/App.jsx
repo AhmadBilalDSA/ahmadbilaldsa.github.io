@@ -10,6 +10,7 @@ import TelemetryConsole from './components/TelemetryConsole'
 import ProjectBento from './components/ProjectBento'
 import ExperienceTimeline from './components/ExperienceTimeline'
 import ArsenalTabs from './components/ArsenalTabs'
+import LightweightSparkles from './components/LightweightSparkles'
 import { GithubIcon, LinkedinIcon } from './components/BrandIcons'
 
 function Footer() {
@@ -18,7 +19,7 @@ function Footer() {
     <footer className="border-t border-slate-800/80">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-10 sm:flex-row sm:px-6">
         <div>
-          <p className="text-sm font-semibold text-slate-50">{p.name}</p>
+          <p className="text-sm font-semibold text-white">{p.name}</p>
           <p className="mt-1 font-mono text-xs text-slate-500">
             © {new Date().getFullYear()} · {p.location} · press&nbsp;<kbd>⌘K</kbd>&nbsp;anywhere
           </p>
@@ -99,8 +100,12 @@ export default function App() {
 
   return (
     <div id="top" className="relative min-h-screen overflow-x-clip">
-      {/* pure-CSS grid mesh background — no WebGL, zero frame cost */}
-      <div aria-hidden="true" className="bg-grid-mesh pointer-events-none fixed inset-0 z-0" />
+      {/* Zero-WebGL backdrop: slate dot-grid + upper ambient glow + 2D particle sparkles */}
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-[#07090e]">
+        <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:28px_28px]" />
+        <div className="absolute -top-48 left-1/2 h-[560px] w-[1100px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-cyan-500/10 via-indigo-500/10 to-transparent blur-[130px]" />
+        <LightweightSparkles className="h-full" />
+      </div>
 
       <div className="relative z-10">
         <FloatingHeader
