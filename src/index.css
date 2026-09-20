@@ -100,6 +100,17 @@
     border-color: var(--color-edge);
   }
 
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [role='button']:focus-visible,
+  [tabindex]:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent-bright) 80%, transparent);
+  }
+
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
@@ -211,30 +222,6 @@
 
   .shimmer-emerald:hover::after {
     opacity: 1;
-  }
-
-  .border-beam {
-    background: conic-gradient(
-      from var(--beam-angle, 0deg),
-      transparent 0deg,
-      transparent 292deg,
-      rgba(34, 211, 238, 0.9) 340deg,
-      rgba(52, 211, 153, 0.7) 360deg
-    );
-    filter: blur(2px);
-    animation: beam-spin 5s linear infinite;
-  }
-
-  @property --beam-angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-  }
-
-  @keyframes beam-spin {
-    to {
-      --beam-angle: 360deg;
-    }
   }
 
   @keyframes emerald-shimmer {
@@ -489,5 +476,16 @@
   }
   50% {
     opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

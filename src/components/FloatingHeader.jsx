@@ -96,6 +96,7 @@ export default function FloatingHeader({ onOpenPalette, onOpenResume }) {
             <button
               type="button"
               onClick={onOpenResume}
+              aria-label="Open resume"
               className="conic-glow-content inline-flex items-center gap-1.5 px-3.5 py-1.5 font-mono text-xs font-medium text-cyan-300 transition-colors hover:text-white sm:text-sm"
             >
               <FileText className="size-3.5" />
