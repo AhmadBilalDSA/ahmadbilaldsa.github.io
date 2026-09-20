@@ -82,9 +82,6 @@ export default function ExperienceTimeline() {
               <li key={cert} className="flex items-start gap-3">
                 <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
                 <span className="text-sm font-medium text-slate-100">{cert}</span>
-                <span className="ml-auto shrink-0 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-emerald-300">
-                  IBM
-                </span>
               </li>
             ))}
             <li className="rounded-xl border border-slate-800 bg-white/[0.03] px-3 py-2.5 text-xs leading-relaxed text-slate-300">

@@ -166,7 +166,7 @@ function UpstreamOss() {
       <p className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-slate-800/80 pt-3 font-mono text-[11px] text-slate-500">
         <span className="text-emerald-300">{data.personal.ghStats.prsMerged} merged</span>
         <span className="text-cyan-300">{data.personal.ghStats.prsAuthored} PRs authored</span>
-        <span>Ibis · SQLGlot · SymPy · HFlow · SciTeX-io</span>
+        <span>LangChain · SQLFluff · Ibis · Semantica · py-simple-wrap</span>
       </p>
     </div>
   )

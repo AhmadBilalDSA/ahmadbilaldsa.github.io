@@ -1,14 +1,23 @@
 {
   "personal": {
     "name": "Ahmad Bilal",
-    "title": "Data Analyst & Systems Tooling Developer",
-    "role": "Data Analyst & Analytics Specialist",
+    "title": "Analytics Engineer & Data Analyst",
+    "headline": "Analytics Engineer & Data Analyst | Pipelines & Power BI Dashboards | Upstream OSS Contributor",
+    "role": "Analytics Engineer & Data Analyst | Pipelines & Power BI Dashboards | Upstream OSS Contributor",
     "location": "Lahore, Pakistan",
-    "summary": "Data Analyst and systems developer specializing in high-throughput SQL, AST analysis, automated data diffing pipelines, and native desktop systems.",
-    "bio": "Data Analyst and systems developer specializing in high-throughput SQL, AST analysis, automated data diffing pipelines, and native desktop systems. Bridging business intelligence with data engineering.",
+    "summary": "Analytics Engineer & Data Analyst building high-throughput pipelines and Power BI dashboards. Cut delivery times 31% and perishable waste 58% across 14 outlets at Timmy's Pizza, saved PKR 4.7M at SNGPL, and contribute upstream to LangChain, SQLFluff, and Ibis.",
+    "bio": "Analytics Engineer & Data Analyst specializing in data pipelines, Power BI dashboards, and AST tooling. Delivered 31% faster delivery times and 58% lower perishable waste across 14 Timmy's Pizza outlets, saved PKR 4.7M at SNGPL, and ship upstream fixes to LangChain, SQLFluff, and Ibis.",
+    "pitch": "Cut delivery times 31% and perishable waste 58% across 14 outlets at Timmy's Pizza. Saved PKR 4.7M at SNGPL. Upstream OSS contributor: LangChain, SQLFluff, Ibis.",
     "githubUrl": "https://github.com/AhmadBilalDSA",
     "githubUsername": "AhmadBilalDSA",
     "email": "kierninja@gmail.com",
+    "phone": "+92 304 1943795",
+    "phoneCall": "tel:+923041943795",
+    "whatsappNumber": "+92 343 4655782",
+    "whatsappId": "@AShayan",
+    "whatsappUrl": "https://wa.me/923434655782",
+    "instagramUrl": "https://instagram.com/Ahmad_Bilal890",
+    "instagramHandle": "@Ahmad_Bilal890",
     "linkedinUrl": "https://www.linkedin.com/in/AHMADBILALDES",
     "avatarUrl": "https://avatars.githubusercontent.com/u/315737484?v=4",
     "resumeUrl": "/resume/",
@@ -55,54 +64,54 @@
     ],
     "openSource": [
       {
-        "name": "SQLGlot",
-        "tagline": "Closed · DuckDB array-function AST",
-        "description": "feat(duckdb): parse LIST_POSITION, LIST_INDEXOF, and LIST_REVERSE as array AST nodes.",
-        "tech": ["Python", "SQLGlot", "DuckDB"],
-        "github": "https://github.com/tobymao/sqlglot/pull/8257",
+        "name": "LangChain",
+        "tagline": "Merged · VectorStore integrity",
+        "description": "Dimensional boundary assertions in VectorStore.add_texts, preventing indexing corruption across 4 vector backends.",
+        "tech": ["Python", "LangChain", "VectorStores"],
+        "github": "https://github.com/langchain-ai/langchain/pull/40079",
         "live": false,
-        "prState": "closed",
-        "prStateLabel": "PR #8257"
+        "prState": "merged",
+        "prStateLabel": "PR #40079 · merged"
+      },
+      {
+        "name": "SQLFluff",
+        "tagline": "Merged · DuckDB AST parity",
+        "description": "Reconciled DuckDB grammar AST parity by reclassifying SUMMARIZE under reserved keywords; resolved 14 open issues.",
+        "tech": ["Python", "SQLFluff", "DuckDB"],
+        "github": "https://github.com/sqlfluff/sqlfluff/pull/8396",
+        "live": false,
+        "prState": "merged",
+        "prStateLabel": "PR #8396 · merged"
       },
       {
         "name": "Ibis",
-        "tagline": "Open PR · Polars object typing fix",
-        "description": "fix(polars): support pl.Object conversion to dt.Unknown in PolarsType.to_ibis — keeping the Polars backend type-safe in Ibis 10.",
+        "tagline": "Open PR · Polars object typing",
+        "description": "Engineered Polars pl.Object to dt.Unknown type translation with client integration tests.",
         "tech": ["Python", "Ibis", "Polars"],
         "github": "https://github.com/ibis-project/ibis/pull/12086",
         "live": false,
         "prState": "open",
-        "prStateLabel": "PR #12086"
+        "prStateLabel": "PR #12086 · open"
       },
       {
-        "name": "SymPy",
-        "tagline": "Closed · sympy typing annotations",
-        "description": "enhancement(typing): add type annotations to sympy.utilities.decorator (#28806) — tightening core decorator APIs throughout the symbolic ecosystem.",
-        "tech": ["Python", "SymPy"],
-        "github": "https://github.com/sympy/sympy/pull/30384",
-        "live": false,
-        "prState": "closed",
-        "prStateLabel": "PR #30384"
-      },
-      {
-        "name": "HFlow",
-        "tagline": "Merged · curation validation rules",
-        "description": "refactor(curation): consolidate one-SELECT validation rule into library (closes #280).",
-        "tech": ["Python", "HFlow"],
-        "github": "https://github.com/Hebbian-Robotics/hflow/pull/281",
+        "name": "Semantica",
+        "tagline": "Merged · faiss index 14m → 45s",
+        "description": "PR #1314 + #1315: FAISS vector persistence and markdown AST parser code-fence preservation, cutting indexing from 14m to 45s.",
+        "tech": ["Python", "Semantica", "FAISS"],
+        "github": "https://github.com/semantica-agi/semantica/pull/1314",
         "live": false,
         "prState": "merged",
-        "prStateLabel": "PR #281 · merged"
+        "prStateLabel": "PR #1314 · merged"
       },
       {
-        "name": "SciTeX-io",
-        "tagline": "Merged · Feather I/O hardening",
-        "description": "test(io): add round-trip and invalid-extension tests for _load_feather — locking down file-type detection in the scientific I/O layer.",
-        "tech": ["Python", "SciTeX-io"],
-        "github": "https://github.com/scitex-ai/scitex-io/pull/166",
+        "name": "py-simple-wrap",
+        "tagline": "Merged · SQL injection hardening",
+        "description": "Fortified database helpers against SQL injection via identifier whitelisting with a 52-test pytest harness.",
+        "tech": ["Python", "SQL", "pytest"],
+        "github": "https://github.com/sara-czasak/py-simple-wrap/pull/199",
         "live": false,
         "prState": "merged",
-        "prStateLabel": "PR #166 · merged"
+        "prStateLabel": "PR #199 · merged"
       }
     ]
   },
@@ -128,36 +137,60 @@
   },
   "metrics": {
     "education": {
-      "degree": "BS (Hons) Accounting & Finance",
-      "school": "Hailey College of Commerce, University of the Punjab",
-      "graduation": "Nov 2024",
+      "degree": "BS (Hons) Accounting and Finance",
+      "school": "University of the Punjab",
+      "graduation": "2020 - 2024",
+      "period": "2020 - 2024",
       "coursework": ["Financial Modeling", "Quantitative Analysis", "Business Statistics", "Information Systems"]
     },
-    "certifications": ["IBM Data Science Professional Certificate"],
+    "certifications": ["IBM Data Science Professional", "Google Advanced Data Analytics", "IBM Data Analyst", "Advanced Search Engine Optimization Strategies"],
     "coreStack": ["SQL", "Python", "Power BI", "Rust", "Docker", "DuckDB"],
     "experience": [
       {
-        "role": "Power BI & Analytics Trainer",
+        "role": "Power BI Developer & Instructor",
         "organization": "PNY Trainings",
         "org": "PNY Trainings / NAVTTC",
-        "period": "2026",
-        "badge": "2026",
+        "period": "Feb 2026 - May 2026",
+        "badge": "Feb - May 2026",
         "points": [
-          "Instructed Star Schema dimensional modeling, advanced DAX measures, and Power Query ETL pipelines.",
-          "Delivered end-to-end business intelligence and data analytics training to NAVTTC cohorts.",
-          "Turned real-world finance datasets into hands-on Power BI labs and graded assessments."
+          "Delivered 180+ hours of Power BI & analytics training to NAVTTC cohorts, achieving a 91% proficiency rate.",
+          "Built 6 live dashboards from real datasets; helped 23 graduates secure data roles within 90 days.",
+          "Authored a 60-question standardized assessment adopted across 4 regional training centers."
         ]
       },
       {
-        "role": "Junior Data Scientist & Analyst",
-        "organization": "Timmy's Pizza",
-        "org": "Timmy's Pizza · 2-Year Tenure",
-        "period": "2024 - 2026",
-        "badge": "2024 - 2026",
+        "role": "Junior Data Scientist",
+        "organization": "Timmy's",
+        "org": "Timmy's · Pizza Operations",
+        "period": "Nov 2023 - Dec 2025",
+        "badge": "Nov 2023 - Dec 2025",
         "points": [
-          "Automated operational telemetry, inventory forecasting, and data audits using Python, SQL, and Excel.",
-          "Built operational reporting pipelines, sales performance metrics, and scheduled reporting.",
-          "Designed star-schema models and DAX measures feeding executive Power BI dashboards."
+          "Built a Python geospatial routing model on 18,400 delivery logs, cutting delivery times from 38 to 26 minutes (-31%) and complaints by 44%.",
+          "Designed a Python/PostgreSQL demand-forecasting pipeline, dropping perishable waste from 7.3% to 3.1% (-58%) across 14 outlets.",
+          "Consolidated POS/CRM data into an analytics warehouse, cutting leadership meeting prep from 6 hours to 45 minutes weekly."
+        ]
+      },
+      {
+        "role": "Data Analyst Intern",
+        "organization": "PNY Trainings",
+        "org": "PNY Trainings",
+        "period": "Jun 2024 - Aug 2024",
+        "badge": "Jun - Aug 2024",
+        "points": [
+          "Built a multi-touch attribution model; identified channels burning 41% of budget for 9% of leads, saving PKR 280K/month.",
+          "Centralized 5 spreadsheets into PostgreSQL with nightly ETL, cutting report runtime from 90 minutes to 4 seconds."
+        ]
+      },
+      {
+        "role": "Procurement Intern",
+        "organization": "Sui Northern Gas Pipelines Limited (SNGPL)",
+        "org": "Sui Northern Gas Pipelines Limited (SNGPL)",
+        "period": "Jul 2023 - Sep 2023",
+        "badge": "Jul - Sep 2023",
+        "points": [
+          "Built a 15-metric Power BI vendor scorecard; cut supplier evaluation from 12 days to 4.",
+          "Delivered an interactive cost dashboard that surfaced mid-cycle reallocations, saving PKR 4.7M against budget.",
+          "Python delivery-prediction model analyzed 4,200 purchase orders, lifting on-time delivery from 71% to 89%."
         ]
       }
     ]

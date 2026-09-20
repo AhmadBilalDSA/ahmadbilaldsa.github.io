@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, FileDown, Mail } from 'lucide-react'
+import { ArrowUpRight, FileDown, Mail, MessageCircle, Phone } from 'lucide-react'
 import data from './data/portfolioData.json'
 import FloatingHeader from './components/FloatingHeader'
 import HeroSection from './components/HeroSection'
@@ -12,7 +12,7 @@ import ProjectBento from './components/ProjectBento'
 import ExperienceTimeline from './components/ExperienceTimeline'
 import ArsenalTabs from './components/ArsenalTabs'
 import LightweightSparkles from './components/LightweightSparkles'
-import { GithubIcon, LinkedinIcon } from './components/BrandIcons'
+import { GithubIcon, InstagramIcon, LinkedinIcon } from './components/BrandIcons'
 
 function Footer() {
   const p = data.personal
@@ -51,6 +51,31 @@ function Footer() {
           >
             <Mail className="size-4" />
             Email
+          </a>
+          <a
+            href={p.whatsappUrl}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-700/70 bg-white/[0.03] px-4 py-2.5 text-sm font-medium text-slate-200 transition-colors hover:border-emerald-500/50 hover:text-emerald-300"
+          >
+            <MessageCircle className="size-4" />
+            WhatsApp
+          </a>
+          <a
+            href={p.phoneCall}
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-700/70 bg-white/[0.03] px-4 py-2.5 text-sm font-medium text-slate-200 transition-colors hover:border-cyan-500/50 hover:text-cyan-300"
+          >
+            <Phone className="size-4" />
+            {p.phone}
+          </a>
+          <a
+            href={p.instagramUrl}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-700/70 bg-white/[0.03] px-4 py-2.5 text-sm font-medium text-slate-200 transition-colors hover:border-fuchsia-500/50 hover:text-fuchsia-300"
+          >
+            <InstagramIcon className="size-4" />
+            Instagram
           </a>
           <a
             href={p.cvPath}
