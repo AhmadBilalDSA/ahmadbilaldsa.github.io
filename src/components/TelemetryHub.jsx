@@ -132,7 +132,10 @@ export default function TelemetryHub() {
 
         <p className="flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-slate-800/80 px-4 py-2.5 font-mono text-[11px] text-slate-600">
           <span>$# activity hub — engine, upstream, edge</span>
-          <span className="ml-auto">source: duck-diff/portfolio_status.json · localStorage</span>
+          <span className="ml-auto flex items-center gap-1.5 text-slate-500">
+            <span className="size-1.5 rounded-full bg-cyan-400" />
+            Live telemetry synchronized via DuckDB engine
+          </span>
         </p>
       </div>
     </section>
