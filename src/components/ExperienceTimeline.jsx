@@ -34,7 +34,7 @@ export default function ExperienceTimeline() {
         {data.metrics.experience.map((exp) => (
           <div
             key={exp.role}
-            className="rounded-2xl border border-slate-800/80 bg-surface/90 card-bevel p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40"
+            className="shimmer-emerald rounded-2xl border border-slate-800/80 bg-surface/90 card-bevel p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40"
           >
             <div className="flex items-start justify-between gap-3">
               <CardShell icon={Building2} label={exp.organization} />

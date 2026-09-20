@@ -67,6 +67,7 @@ function StageCard({ stage }) {
   const Icon = stage.icon
   return (
     <div className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl border border-slate-800/80 bg-[#0d121c] card-bevel p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40">
+      <div className="radar-sweep-line" />
       <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-3">

@@ -225,7 +225,7 @@ export default function SystemPlayground() {
         </p>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-slate-800 bg-[#0c1017] shadow-card backdrop-blur-md">
+      <div className="card-spotlight overflow-hidden rounded-2xl border border-slate-800 bg-[#0c1017] shadow-card backdrop-blur-md">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800/80 bg-elevated/70 px-4 py-2.5">
           <div className="flex items-center gap-2">
             <span className="size-3 rounded-full bg-rose/70" />

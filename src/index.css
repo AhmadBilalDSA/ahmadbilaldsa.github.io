@@ -117,6 +117,9 @@
   body {
     margin: 0;
     background-color: #07090e;
+    background-image: radial-gradient(circle at 50% -20%, rgba(56, 189, 248, 0.08) 0%, transparent 60%),
+      radial-gradient(circle at 100% 40%, rgba(168, 85, 247, 0.04) 0%, transparent 40%);
+    background-attachment: fixed;
     color: #cbd5e1;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -178,6 +181,74 @@
     background-attachment: fixed;
   }
 
+  .ambient-dot-grid {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='1.5' cy='1.5' r='1' fill='%231e293b' fill-opacity='0.55'/%3E%3C/svg%3E");
+    background-size: 28px 28px;
+    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  }
+
+  .card-spotlight {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-spotlight::before {
+    z-index: 0;
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: radial-gradient(
+      280px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(56, 189, 248, 0.15),
+      transparent 80%
+    );
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .card-spotlight:hover::before {
+    opacity: 1;
+  }
+
+  .radar-sweep-line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 30%;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, rgba(34, 211, 238, 0.18), transparent);
+    animation: radar-sweep 6s linear infinite;
+  }
+
+  .shimmer-emerald {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-emerald::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      110deg,
+      transparent 30%,
+      rgba(52, 211, 153, 0.12) 50%,
+      transparent 70%
+    );
+    animation: emerald-shimmer 2.4s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .shimmer-emerald:hover::after {
+    opacity: 1;
+  }
+
   .border-beam {
     background: conic-gradient(
       from var(--beam-angle, 0deg),
@@ -199,6 +270,29 @@
   @keyframes beam-spin {
     to {
       --beam-angle: 360deg;
+    }
+  }
+
+  @keyframes radar-sweep {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes emerald-shimmer {
+    0% {
+      transform: translateX(-120%);
+    }
+    100% {
+      transform: translateX(120%);
     }
   }
 }

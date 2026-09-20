@@ -75,7 +75,7 @@ export default function TiltCard({ project, category, featured = false, featured
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
-      <div className="relative h-full overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/90 card-bevel backdrop-blur-md transition-all duration-300 hover:border-cyan-500/40">
+      <div className="card-spotlight relative h-full overflow-hidden rounded-2xl border border-slate-800/80 bg-surface/90 card-bevel backdrop-blur-md transition-all duration-300 hover:border-cyan-500/40">
         <div
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           style={{ background: glare }}
