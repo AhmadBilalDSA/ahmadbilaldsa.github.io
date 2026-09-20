@@ -36,7 +36,7 @@ export default function CaseStudyDrawer() {
         <>
           <motion.div
             key="backdrop"
-            className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -48,7 +48,7 @@ export default function CaseStudyDrawer() {
             role="dialog"
             aria-modal="true"
             aria-label={study.title}
-            className="fixed inset-y-0 right-0 z-[70] w-full max-w-xl overflow-y-auto border-l border-slate-800/80 bg-[#0a0e17] p-6 sm:p-8"
+            className="fixed inset-y-0 right-0 z-[70] w-full max-w-xl overflow-y-auto border-l border-slate-800/80 bg-[#0a0e17] p-6 text-slate-200 sm:p-8"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
@@ -87,7 +87,7 @@ export default function CaseStudyDrawer() {
 
               <div>
                 <SectionTitle icon={Layers}>Architectural Pipeline</SectionTitle>
-                <div className="relative overflow-hidden rounded-xl border border-slate-800 bg-[#0c1017] p-4">
+                <div className="relative overflow-hidden rounded-xl border border-slate-800 bg-[#0c1017] card-bevel p-4">
                   <span className="absolute inset-y-0 left-0 w-0.5 bg-gradient-to-b from-cyan-400/80 via-cyan-400/30 to-transparent" />
                   <p className="whitespace-pre font-mono text-[13px] leading-relaxed text-slate-200">{study.architecture}</p>
                 </div>
@@ -103,7 +103,7 @@ export default function CaseStudyDrawer() {
                       key={metric}
                       className="rounded-xl border border-slate-800/80 bg-surface/90 card-bevel p-4 transition-colors hover:border-emerald-500/30"
                     >
-                      <p className="whitespace-pre text-sm font-semibold leading-snug text-emerald-300">{metric}</p>
+                      <p className="whitespace-pre font-mono text-sm font-semibold leading-snug text-emerald-300">{metric}</p>
                     </div>
                   ))}
                 </div>

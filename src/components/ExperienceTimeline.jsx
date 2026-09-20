@@ -58,7 +58,7 @@ export default function ExperienceTimeline() {
                 onClick={() => openCaseStudy(exp.caseStudyId)}
                 className="mt-5 inline-flex w-fit items-center gap-1.5 font-mono text-xs font-medium text-cyan-300 transition-colors hover:text-cyan-200"
               >
-                View case study breakdown
+                View Case Study
                 <ArrowUpRight className="size-3.5" />
               </button>
             )}
