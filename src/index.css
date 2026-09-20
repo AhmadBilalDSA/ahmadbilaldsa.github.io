@@ -235,21 +235,61 @@
 }
 
 @media print {
-  body.print-resume * {
-    visibility: hidden;
+  /* Hide the entire website UI, header, backgrounds, and drawers */
+  body * {
+    visibility: hidden !important;
   }
 
-  body.print-resume .print-resume-area,
-  body.print-resume .print-resume-area * {
-    visibility: visible;
-    color: #18181b !important;
+  /* Only show the dedicated printable resume container */
+  #printable-resume,
+  #printable-resume * {
+    visibility: visible !important;
   }
 
-  body.print-resume .print-resume-area {
-    position: fixed;
-    inset: 0;
-    overflow: visible;
-    background: #fff;
+  #printable-resume {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: white !important;
+    color: black !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Strip all shadows, backdrops, animations, and masks during print */
+  * {
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    animation: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+}
+
+/* Off-screen by default; only revealed by the print block above */
+#printable-resume {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  width: 100%;
+  visibility: hidden;
+}
+
+/* ATS ink fidelity: force near-black text on white in the printed resume */
+@media print {
+  #printable-resume,
+  #printable-resume * {
+    color: #0a0a0a !important;
+    border-color: #333 !important;
   }
 }
 
@@ -299,6 +339,8 @@
 
 /* Ambient Engineered Grid */
 .bg-cyber-grid {
+  will-change: auto;
+  transform: translateZ(0);
   background-size: 36px 36px;
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
@@ -342,11 +384,12 @@
   overflow: hidden;
   border-radius: 0.75rem;
   padding: 1px;
+  contain: paint;
 }
 
 .conic-glow-runner {
   position: absolute;
-  inset: -150%;
+  inset: -20px;
   background: conic-gradient(
     from 0deg,
     transparent 0deg,
@@ -398,13 +441,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.15) 0px,
-    rgba(0, 0, 0, 0.15) 1px,
-    transparent 1px,
-    transparent 2px
-  );
+  background: rgba(0, 0, 0, 0.25);
   pointer-events: none;
   z-index: 3;
 }

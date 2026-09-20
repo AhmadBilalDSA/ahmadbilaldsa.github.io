@@ -7,7 +7,6 @@ import ResumeDocument from './ResumeDocument'
 export default function ResumeModal({ open, onClose }) {
   useEffect(() => {
     if (!open) return
-    document.body.classList.add('print-resume')
     const onKey = (e) => {
       if (e.key === 'Escape') {
         e.preventDefault()
@@ -16,7 +15,6 @@ export default function ResumeModal({ open, onClose }) {
     }
     window.addEventListener('keydown', onKey)
     return () => {
-      document.body.classList.remove('print-resume')
       window.removeEventListener('keydown', onKey)
     }
   }, [open, onClose])

@@ -34,11 +34,11 @@ function Section({ label, children }) {
   )
 }
 
-export default function ResumeDocument() {
+export default function ResumeDocument({ id }) {
   const p = data.personal
 
   return (
-    <div className="print-resume-area">
+    <div id={id}>
       <header className="border-b border-slate-800/80 px-6 py-6 sm:px-8">
         <h1 className="text-3xl font-extrabold tracking-tight text-white">
           Ahmad Bilal

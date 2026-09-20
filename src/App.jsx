@@ -16,6 +16,7 @@ import ArsenalTabs from './components/ArsenalTabs'
 import LightweightSparkles from './components/LightweightSparkles'
 import CaseStudyDrawer from './components/CaseStudyDrawer'
 import SecurityShield from './components/SecurityShield'
+import ResumeDocument from './components/ResumeDocument'
 import { GithubIcon, InstagramIcon, LinkedinIcon } from './components/BrandIcons'
 
 function Footer() {
@@ -192,6 +193,7 @@ export default function App() {
       <ResumeModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
       <CaseStudyDrawer />
       <SecurityShield />
+      <ResumeDocument id="printable-resume" />
     </div>
   )
 }
