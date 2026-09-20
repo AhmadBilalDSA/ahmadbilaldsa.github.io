@@ -1,0 +1,98 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 8 0 R >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 3034 >>
+stream
+BT /F2 20 Tf 54 756.0 Td (AHMAD BILAL) Tj ET
+BT /F1 11 Tf 54 727.8 Td (Data Analyst & Systems Tooling Developer) Tj ET
+BT /F1 9.8 Tf 54 705.7 Td (Lahore, Pakistan   |   kierninja@gmail.com   |   github.com/AhmadBilalDSA   |   linkedin.com/in/AHMADBILALDES) Tj ET
+BT /F2 8.5 Tf 54 689.1 Td (PUBLIC REPOS 47   |   PRs AUTHORED 53   |   MERGED 24   |   OPEN 13   |   FOLLOWERS 9) Tj ET
+BT /F2 10.5 Tf 54 662.1 Td (TECHNICAL SUMMARY) Tj ET
+BT /F1 9.8 Tf 54 641.7 Td (Data Analyst and systems developer specializing in high-throughput SQL, AST analysis,) Tj ET
+BT /F1 9.8 Tf 54 629.2 Td (automated data diffing pipelines, and native desktop systems. Verified by 24 merged) Tj ET
+BT /F1 9.8 Tf 54 616.7 Td (upstream PRs across SQLGlot, HFlow, SciTeX-io, dbt-duckdb, and tidb, plus 47 public) Tj ET
+BT /F1 9.8 Tf 54 604.2 Td (repositories.) Tj ET
+BT /F2 10.5 Tf 54 578.2 Td (ENGINEERING PROJECTS) Tj ET
+BT /F2 10 Tf 54 557.8 Td (MockForge        [Rust | Tauri v2 | React Flow | TypeScript | Tailwind CSS]) Tj ET
+BT /F1 9.8 Tf 54 543.7 Td (Native AI mock interview simulator and interactive system design workbench.) Tj ET
+BT /F1 9.8 Tf 54 531.2 Td (Offline heuristic feedback with zero cloud latency; SPOF / cache-pressure analyzer on an interactive canvas.) Tj ET
+BT /F1 9.8 Tf 54 518.7 Td (Windows SAPI speech integration delivers native on-device voice.) Tj ET
+BT /F2 10 Tf 54 498.1 Td (duck-diff        [DuckDB | Python | GitHub Actions | Discord Webhooks]) Tj ET
+BT /F1 9.8 Tf 54 484.0 Td (Automated data diff pipeline and visual lineage engine with constant-memory reconciliation.) Tj ET
+BT /F1 9.8 Tf 54 471.5 Td (Headless CI/CD telemetry tracking with automated regression detection across pipelines.) Tj ET
+BT /F1 9.8 Tf 54 459.0 Td (Scheduled daily health dispatch to Discord; live telemetry feeds the portfolio console.) Tj ET
+BT /F2 10 Tf 54 438.4 Td (sqlean-lint PRO        [Python | SQLGlot | AST parsing | CustomTkinter]) Tj ET
+BT /F1 9.8 Tf 54 424.3 Td (Local-first SQL static analysis and AST mutation CLI.) Tj ET
+BT /F1 9.8 Tf 54 411.8 Td (Multi-dialect linting, query tree inspection, and automated anti-pattern rewrites.) Tj ET
+BT /F2 10.5 Tf 54 388.5 Td (UPSTREAM OPEN SOURCE        53 PRs authored / 24 merged) Tj ET
+BT /F1 9.8 Tf 54 368.1 Td (Ibis PR #12086 \(open\): pl.Object conversion to dt.Unknown in PolarsType.to_ibis.) Tj ET
+BT /F1 9.8 Tf 54 355.6 Td (SQLGlot PR #8257: DuckDB LIST_POSITION / LIST_INDEXOF / LIST_REVERSE array AST nodes.) Tj ET
+BT /F1 9.8 Tf 54 343.1 Td (SymPy PR #30384: type annotations for sympy.utilities.decorator.) Tj ET
+BT /F1 9.8 Tf 54 330.6 Td (HFlow PR #281 \(merged\): consolidated curation validation rules, closing #280.) Tj ET
+BT /F1 9.8 Tf 54 318.1 Td (SciTeX-io PR #166 \(merged\): Feather I/O round-trip and invalid-extension hardening.) Tj ET
+BT /F1 9.8 Tf 54 305.6 Td (Also merged: pingcap/tidb #70912 \(IndexMerge truncation\), duckdb/dbt-duckdb #835 \(Windows fix\).) Tj ET
+BT /F1 8 Tf 54 285.0 Td (Page 1 of 2      github.com/AhmadBilalDSA/ahmadbilaldsa.github.io) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Length 2208 >>
+stream
+BT /F2 10.5 Tf 54 756.0 Td (PROFESSIONAL EXPERIENCE) Tj ET
+BT /F2 10 Tf 54 734.3 Td (Power BI & Analytics Trainer           [PNY Trainings / NAVTTC / 2026]) Tj ET
+BT /F1 9.8 Tf 54 718.8 Td (Instructed Star Schema dimensional modeling, advanced DAX measures, and Power Query ETL pipelines.) Tj ET
+BT /F1 9.8 Tf 54 706.3 Td (Delivered end-to-end business intelligence and data analytics training to NAVTTC cohorts.) Tj ET
+BT /F1 9.8 Tf 54 693.8 Td (Turned real-world finance datasets into hands-on Power BI labs and graded assessments.) Tj ET
+BT /F2 10 Tf 54 670.5 Td (Junior Data Scientist & Analyst           [Timmy's Pizza / 2024 - 2026]) Tj ET
+BT /F1 9.8 Tf 54 655.0 Td (Automated operational telemetry, inventory forecasting, and data audits using Python, SQL, and Excel.) Tj ET
+BT /F1 9.8 Tf 54 642.5 Td (Built operational reporting pipelines, sales performance metrics, and scheduled reporting.) Tj ET
+BT /F1 9.8 Tf 54 630.0 Td (Designed star-schema models and DAX measures feeding executive Power BI dashboards.) Tj ET
+BT /F2 10.5 Tf 54 604.0 Td (EDUCATION) Tj ET
+BT /F2 10 Tf 54 583.6 Td (BS \(Hons\) Accounting & Finance        [Hailey College of Commerce, University of the Punjab]) Tj ET
+BT /F1 9.8 Tf 54 569.5 Td (Graduated Nov 2024.  Coursework: Financial Modeling, Quantitative Analysis, Business Statistics, Information Systems.) Tj ET
+BT /F2 10.5 Tf 54 543.5 Td (CERTIFICATION) Tj ET
+BT /F2 10 Tf 54 523.1 Td (IBM Data Science Professional Certificate) Tj ET
+BT /F1 9.8 Tf 54 509.0 Td (Python, SQL, Data Analysis, Predictive Modeling, and Machine Learning workflows.) Tj ET
+BT /F2 10.5 Tf 54 483.0 Td (TECHNICAL ARSENAL) Tj ET
+BT /F1 9.8 Tf 54 462.6 Td (Core Languages: SQL \(PostgreSQL, MySQL, DuckDB, SQLite\); Python \(Pandas, NumPy, AST/SQLGlot\); Rust \(Tauri v2\); TypeScript; C/C++.) Tj ET
+BT /F1 9.8 Tf 54 450.1 Td (BI & Analytics: Power BI \(DAX, Star Schema, Power Query\); Advanced Microsoft Excel \(XLOOKUP, Pivot Tables, Macros\).) Tj ET
+BT /F1 9.8 Tf 54 437.6 Td (Infrastructure & Automation: GitHub Actions CI/CD; Docker; Git; Linux/Bash; Headless Chromium \(Playwright\).) Tj ET
+BT /F1 8 Tf 54 414.3 Td (Page 2 of 2      github.com/AhmadBilalDSA/ahmadbilaldsa.github.io) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Title (Ahmad Bilal - CV) /Author (Ahmad Bilal) /Producer (portfolio generator) /CreationDate (D:20260920120000Z) >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000393 00000 n 
+0000000490 00000 n 
+0000000592 00000 n 
+0000003677 00000 n 
+0000005936 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R /Info 9 0 R >>
+startxref
+6071
+%%EOF

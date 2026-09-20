@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Ahmad Bilal &mdash; Data Analyst &amp; Systems Tooling Developer. CV and professional background."
+    />
+    <title>Ahmad Bilal &mdash; CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #030712;
+        --surface: #090d16;
+        --elevated: #0f1522;
+        --edge: #1b2333;
+        --ink: #e2e8f0;
+        --muted: #94a3b8;
+        --faint: #64748b;
+        --accent: #818cf8;
+        --accent-bright: #a5b4fc;
+        --cyan: #22d3ee;
+        --mint: #34d399;
+        --sky: #38bdf8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: var(--bg);
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 20px;
+        background: rgba(3, 7, 18, 0.8);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--edge);
+      }
+
+      .toolbar .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        color: var(--ink);
+        text-decoration: none;
+      }
+
+      .toolbar .monogram {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 800;
+        color: #fff;
+        background: linear-gradient(135deg, var(--accent), #4f46e5);
+      }
+
+      .toolbar .back {
+        color: var(--muted);
+        font-size: 13px;
+        text-decoration: none;
+      }
+      .toolbar .back:hover {
+        color: var(--accent-bright);
+      }
+
+      .btn-print {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 8px;
+        border: 1px solid var(--edge);
+        background: var(--elevated);
+        color: var(--ink);
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: border-color 0.2s, color 0.2s;
+      }
+      .btn-print:hover {
+        border-color: rgba(129, 140, 248, 0.6);
+        color: var(--accent-bright);
+      }
+
+      .resume-wrap {
+        max-width: 864px;
+        margin: 0 auto;
+        padding: 40px 20px 64px;
+      }
+
+      .doc {
+        border: 1px solid var(--edge);
+        border-radius: 16px;
+        background: var(--surface);
+        overflow: hidden;
+      }
+
+      .doc-head {
+        padding: 32px 36px 24px;
+        border-bottom: 1px solid var(--edge);
+      }
+
+      .doc-head h1 {
+        margin: 0;
+        font-size: 32px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        font-weight: 800;
+        color: #fff;
+      }
+
+      .doc-head .role {
+        margin: 6px 0 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: transparent;
+        background: linear-gradient(90deg, var(--accent-bright), var(--cyan));
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+        margin-top: 16px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .meta a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .meta a:hover {
+        color: var(--accent-bright);
+      }
+
+      .gh-mini {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 14px;
+      }
+
+      .gh-mini span {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10.5px;
+        color: var(--faint);
+        border: 1px solid var(--edge);
+        border-radius: 999px;
+        padding: 3px 10px;
+        background: var(--elevated);
+      }
+
+      .gh-mini b {
+        color: var(--accent-bright);
+        font-weight: 600;
+      }
+
+      .doc-body {
+        padding: 28px 36px 36px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+
+      section.block {
+        margin-bottom: 28px;
+      }
+
+      section.block:last-child {
+        margin-bottom: 0;
+      }
+
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 14px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--accent-bright);
+      }
+
+      h2::before {
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      .summary {
+        margin: 0;
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .skill {
+        padding: 5px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(129, 140, 248, 0.35);
+        background: rgba(129, 140, 248, 0.08);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: var(--accent-bright);
+      }
+
+      .arsenal {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .arsenal .agroup {
+        margin: 0;
+      }
+
+      .agroup .aname {
+        margin: 0 0 8px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--faint);
+      }
+
+      .project {
+        padding: 16px 0;
+        border-bottom: 1px solid var(--edge);
+      }
+      .project:last-of-type {
+        border-bottom: 0;
+      }
+
+      .project .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+
+      .project h3 {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .project .stack {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: var(--faint);
+        white-space: nowrap;
+      }
+
+      .project p {
+        margin: 6px 0 0;
+        font-size: 13.5px;
+        color: var(--muted);
+      }
+
+      .project ul {
+        margin: 8px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .project li {
+        position: relative;
+        margin-top: 5px;
+        padding-left: 16px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .project li::before {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 8px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      .project li a {
+        color: var(--accent-bright);
+        text-decoration: none;
+      }
+      .project li a:hover {
+        text-decoration: underline;
+      }
+
+      .state {
+        display: inline-block;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.04em;
+        padding: 2px 8px;
+        border-radius: 999px;
+        vertical-align: 1px;
+      }
+      .state.merged {
+        color: var(--mint);
+        border: 1px solid rgba(52, 211, 153, 0.4);
+        background: rgba(52, 211, 153, 0.08);
+      }
+      .state.open {
+        color: var(--sky);
+        border: 1px solid rgba(56, 189, 248, 0.4);
+        background: rgba(56, 189, 248, 0.08);
+      }
+      .state.authored {
+        color: var(--faint);
+        border: 1px solid var(--edge);
+        background: var(--elevated);
+      }
+
+      .exp h3 {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .exp .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+
+      .exp .org {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: var(--faint);
+        white-space: nowrap;
+      }
+
+      .exp ul {
+        margin: 8px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .exp li {
+        position: relative;
+        margin-top: 5px;
+        padding-left: 16px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .exp li::before {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 8px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--sky);
+      }
+
+      .edu h3 {
+        margin: 0;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 600;
+      }
+      .edu p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .aside {
+        padding-top: 2px;
+      }
+
+      .aside .cert {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        padding: 8px 12px;
+        border: 1px solid var(--edge);
+        border-radius: 10px;
+        background: var(--elevated);
+        font-size: 12.5px;
+        color: var(--ink);
+      }
+      .aside .cert + .cert {
+        margin-top: 8px;
+      }
+      .aside .cert svg {
+        flex-shrink: 0;
+        color: var(--cyan);
+      }
+
+      .trace {
+        margin-top: 12px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        color: var(--faint);
+      }
+
+      @media (max-width: 720px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .doc-head,
+        .doc-body {
+          padding-left: 22px;
+          padding-right: 22px;
+        }
+      }
+
+      @media print {
+        @page {
+          margin: 1.5cm;
+        }
+
+        :root {
+          --bg: #ffffff !important;
+          --surface: #ffffff !important;
+          --elevated: #f4f4f5 !important;
+          --edge: #e4e4e7 !important;
+          --ink: #18181b !important;
+          --muted: #3f3f46 !important;
+          --faint: #71717a !important;
+          --accent: #4f46e5 !important;
+          --accent-bright: #4338ca !important;
+        }
+
+        html,
+        body {
+          background: #ffffff !important;
+        }
+
+        .toolbar {
+          display: none !important;
+        }
+
+        .resume-wrap {
+          max-width: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .doc {
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .doc-head h1 {
+          color: #000;
+        }
+
+        .project h3,
+        .exp h3,
+        .edu h3 {
+          color: #18181b;
+        }
+
+        .skill {
+          border-color: #d4d4d8;
+          background: #f4f4f5;
+          color: #3f3f46;
+        }
+
+        .state {
+          border-color: #d4d4d8 !important;
+          background: #f4f4f5 !important;
+          color: #3f3f46 !important;
+        }
+
+        .aside .cert {
+          background: #fafafa;
+        }
+
+        section.block,
+        .project,
+        .doc-head {
+          break-inside: avoid;
+        }
+
+        a {
+          color: #3f3f46;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="toolbar" aria-label="Resume toolbar">
+      <a class="brand" href="/" aria-label="Back to portfolio">
+        <span class="monogram">AB</span>
+        <span>Ahmad Bilal</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 12px">
+        <a class="back" href="/">&larr; portfolio</a>
+        <button class="btn-print" type="button" onclick="window.print()">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="6 9 6 2 18 2 18 9" />
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+            <rect x="6" y="14" width="12" height="8" />
+          </svg>
+          Print / Save PDF
+        </button>
+      </div>
+    </nav>
+
+    <main class="resume-wrap">
+      <div class="doc">
+        <header class="doc-head">
+          <h1>Ahmad Bilal</h1>
+          <p class="role">Data Analyst &amp; Systems Tooling Developer</p>
+          <div class="meta">
+            <span>Lahore, Pakistan</span>
+            <a href="https://www.linkedin.com/in/AHMADBILALDES" target="_blank" rel="noreferrer noopener">
+              linkedin.com/in/AHMADBILALDES
+            </a>
+            <a href="mailto:kierninja@gmail.com">kierninja@gmail.com</a>
+            <a href="https://github.com/AhmadBilalDSA" target="_blank" rel="noreferrer noopener">
+              github.com/AhmadBilalDSA
+            </a>
+            <a href="/" target="_blank" rel="noreferrer noopener">ahmadbilaldsa.github.io</a>
+          </div>
+          <div class="gh-mini">
+            <span><b>47</b> public repos</span>
+            <span><b>53</b> PRs authored</span>
+            <span><b>24</b> merged</span>
+            <span><b>13</b> open</span>
+            <span><b>9</b> followers</span>
+          </div>
+        </header>
+
+        <div class="doc-body">
+          <div class="grid">
+            <div class="main">
+              <section class="block">
+                <h2>Technical Summary</h2>
+                <p class="summary">
+                  Data Analyst and systems developer specializing in high-throughput SQL, AST
+                  analysis, automated data diffing pipelines, and native desktop systems &mdash;
+                  verified by 24 merged pull requests across SQLGlot, HFlow, SciTeX-io, dbt-duckdb,
+                  and tidb, with 47 public repositories.
+                </p>
+              </section>
+
+              <section class="block">
+                <h2>Engineering Projects</h2>
+
+                <article class="project">
+                  <div class="top">
+                    <h3>MockForge</h3>
+                    <span class="stack">Rust · Tauri v2 · React Flow · TS · Tailwind</span>
+                  </div>
+                  <ul>
+                    <li>Native AI mock interview simulator &amp; interactive system design workbench.</li>
+                    <li>Offline heuristic feedback with zero cloud latency &mdash; no interview data ever leaves the machine.</li>
+                    <li>Interactive canvas ships an integrated SPOF / cache-pressure analyzer; Windows SAPI enables native speech.</li>
+                  </ul>
+                </article>
+
+                <article class="project">
+                  <div class="top">
+                    <h3>duck-diff</h3>
+                    <span class="stack">DuckDB · Python · GitHub Actions · Discord Webhooks</span>
+                  </div>
+                  <ul>
+                    <li>Automated data-diff pipeline &amp; visual lineage engine with constant-memory reconciliation.</li>
+                    <li>Headless CI/CD telemetry tracking surfaces automated regression detection across data pipelines.</li>
+                    <li>Scheduled daily health dispatch to Discord; live telemetry feeds the portfolio front page.</li>
+                  </ul>
+                </article>
+
+                <article class="project">
+                  <div class="top">
+                    <h3>sqlean-lint PRO</h3>
+                    <span class="stack">Python · SQLGlot · AST parsing · CustomTkinter</span>
+                  </div>
+                  <ul>
+                    <li>Local-first SQL static analysis and AST mutation CLI.</li>
+                    <li>Multi-dialect linting, query tree inspection, and automated anti-pattern rewrites.</li>
+                  </ul>
+                </article>
+
+                <article class="project">
+                  <div class="top">
+                    <h3>Upstream Open Source</h3>
+                    <span class="stack">53 PRs authored · 24 merged</span>
+                  </div>
+                  <ul>
+                    <li>
+                      <span class="state authored">4x</span>
+                      <a href="https://github.com/tobymao/sqlglot/pull/8257" target="_blank" rel="noreferrer noopener">SQLGlot</a>
+                      &mdash; DuckDB dialect LIST_POSITION / LIST_INDEXOF / LIST_REVERSE array AST nodes (PRs #8250, #8254, #8255, #8257).
+                    </li>
+                    <li>
+                      <span class="state open">Open</span>
+                      <a href="https://github.com/ibis-project/ibis/pull/12086" target="_blank" rel="noreferrer noopener">Ibis</a>
+                      &mdash; PR <b>#12086</b>: pl.Object conversion to dt.Unknown in PolarsType.to_ibis.
+                    </li>
+                    <li>
+                      <span class="state merged">Merged</span>
+                      <a href="https://github.com/Hebbian-Robotics/hflow/pull/281" target="_blank" rel="noreferrer noopener">HFlow</a>
+                      &mdash; PR <b>#281</b>: consolidated curation validation rules, closing #280.
+                    </li>
+                    <li>
+                      <span class="state merged">Merged</span>
+                      <a href="https://github.com/scitex-ai/scitex-io/pull/166" target="_blank" rel="noreferrer noopener">SciTeX-io</a>
+                      &mdash; PR <b>#166</b>: Feather I/O round-trip and invalid-extension hardening.
+                    </li>
+                    <li>
+                      <span class="state authored">Typing</span>
+                      <a href="https://github.com/sympy/sympy/pull/30384" target="_blank" rel="noreferrer noopener">SymPy</a>
+                      &mdash; PR <b>#30384</b>: annotations for sympy.utilities.decorator.
+                    </li>
+                    <li>
+                      <span class="state merged">Merged</span>
+                      Also landed: pingcap/tidb <b>#70912</b>, duckdb/dbt-duckdb <b>#835</b>, semantica <b>#1315</b> &amp; <b>#1314</b>.
+                    </li>
+                  </ul>
+                </article>
+              </section>
+
+              <section class="block exp">
+                <h2>Professional Experience</h2>
+
+                <div class="exp-item" style="margin-bottom: 20px">
+                  <div class="top">
+                    <h3>Power BI &amp; Analytics Trainer</h3>
+                    <span class="org">PNY Trainings / NAVTTC · 2026</span>
+                  </div>
+                  <ul>
+                    <li>Instructed Star Schema dimensional modeling, advanced DAX measures, and Power Query ETL pipelines.</li>
+                    <li>Delivered end-to-end business intelligence and data analytics training to NAVTTC cohorts.</li>
+                    <li>Turned real-world finance datasets into hands-on Power BI labs and graded assessments.</li>
+                  </ul>
+                </div>
+
+                <div class="exp-item">
+                  <div class="top">
+                    <h3>Junior Data Scientist &amp; Analyst</h3>
+                    <span class="org">Timmy's Pizza · 2024 - 2026</span>
+                  </div>
+                  <ul>
+                    <li>Automated operational telemetry, inventory forecasting, and data audits using Python, SQL, and Excel.</li>
+                    <li>Built operational reporting pipelines, sales performance metrics, and scheduled reporting.</li>
+                    <li>Designed star-schema models and DAX measures feeding executive Power BI dashboards.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section class="block edu">
+                <h2>Education</h2>
+                <h3>BS (Hons) Accounting &amp; Finance</h3>
+                <p>
+                  Hailey College of Commerce, University of the Punjab &mdash; Lahore, Pakistan
+                  <span style="color: var(--faint)"> · Graduated Nov 2024</span>
+                </p>
+                <p style="margin-top: 4px; color: var(--faint)">
+                  Coursework: Financial Modeling · Quantitative Analysis · Business Statistics · Information Systems
+                </p>
+              </section>
+            </div>
+
+            <aside class="aside">
+              <section class="block">
+                <h2>Technical Arsenal</h2>
+                <div class="arsenal">
+                  <div class="agroup">
+                    <p class="aname">Core Languages</p>
+                    <div class="skills">
+                      <span class="skill">SQL (PG · MySQL · DuckDB · SQLite)</span>
+                      <span class="skill">Python (Pandas · NumPy · AST)</span>
+                      <span class="skill">Rust / Tauri v2</span>
+                      <span class="skill">TypeScript / React</span>
+                      <span class="skill">C / C++</span>
+                    </div>
+                  </div>
+                  <div class="agroup">
+                    <p class="aname">BI &amp; Analytics</p>
+                    <div class="skills">
+                      <span class="skill">Power BI · DAX</span>
+                      <span class="skill">Star Schema · Power Query</span>
+                      <span class="skill">Excel (XLOOKUP · Pivots · Macros)</span>
+                    </div>
+                  </div>
+                  <div class="agroup">
+                    <p class="aname">Infrastructure &amp; Automation</p>
+                    <div class="skills">
+                      <span class="skill">GitHub Actions</span>
+                      <span class="skill">Docker</span>
+                      <span class="skill">Git</span>
+                      <span class="skill">Linux / Bash</span>
+                      <span class="skill">Headless Chromium (Playwright)</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="block">
+                <h2>Certifications</h2>
+                <p class="cert">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="6" />
+                    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                  </svg>
+                  IBM Data Science Professional Certificate
+                </p>
+                <p style="margin-top: 8px; font-size: 12px; color: var(--faint)">
+                  Python · SQL · Data Analysis · Predictive Modeling · ML workflows
+                </p>
+              </section>
+
+              <p class="trace">// print or save-as-PDF for the full document</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

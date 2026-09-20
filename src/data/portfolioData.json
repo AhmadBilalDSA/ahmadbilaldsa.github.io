@@ -1,0 +1,172 @@
+{
+  "personal": {
+    "name": "Ahmad Bilal",
+    "title": "Data Analyst & Systems Tooling Developer",
+    "role": "Data Analyst & Analytics Specialist",
+    "location": "Lahore, Pakistan",
+    "summary": "Data Analyst and systems developer specializing in high-throughput SQL, AST analysis, automated data diffing pipelines, and native desktop systems.",
+    "bio": "Data Analyst and systems developer specializing in high-throughput SQL, AST analysis, automated data diffing pipelines, and native desktop systems. Bridging business intelligence with data engineering.",
+    "githubUrl": "https://github.com/AhmadBilalDSA",
+    "githubUsername": "AhmadBilalDSA",
+    "email": "kierninja@gmail.com",
+    "linkedinUrl": "https://www.linkedin.com/in/AHMADBILALDES",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/315737484?v=4",
+    "resumeUrl": "/resume/",
+    "cvPath": "/resume/Ahmad-Bilal-CV.pdf",
+    "discordContact": "AhmadBilalDSA",
+    "discordUrl": "https://discord.com/users/AhmadBilalDSA",
+    "ghStats": {
+      "publicRepos": 47,
+      "prsAuthored": 53,
+      "prsMerged": 24,
+      "prsOpen": 13,
+      "followers": 9,
+      "profileCreated": "2026-08-11"
+    }
+  },
+  "projects": {
+    "systems": [
+      {
+        "name": "MockForge",
+        "tagline": "Native AI mock interview simulator & system design workbench",
+        "description": "Desktop-first AI mock interview simulator wiring Rust and Tauri v2 to React Flow system-design boards. Offline heuristic feedback grades every response on-device — zero cloud latency. Interactive canvas ships an integrated SPOF / cache-pressure analyzer, and Windows SAPI enables native speech.",
+        "tech": ["Rust", "Tauri v2", "React Flow", "TypeScript", "Tailwind CSS"],
+        "github": "https://github.com/AhmadBilalDSA?q=mockforge",
+        "live": true
+      }
+    ],
+    "data": [
+      {
+        "name": "duck-diff",
+        "tagline": "Automated data diff pipeline & visual lineage engine",
+        "description": "Constant-memory reconciliation engine powered by DuckDB SQL. Headless CI/CD telemetry tracking surfaces automated regression detection across data pipelines, with a scheduled daily health dispatch to Discord — the same telemetry that feeds this page.",
+        "tech": ["DuckDB", "Python", "GitHub Actions", "Discord Webhooks"],
+        "github": "https://github.com/AhmadBilalDSA/duck-diff",
+        "live": true
+      },
+      {
+        "name": "sqlean-lint PRO",
+        "tagline": "Local-first SQL static analysis & AST mutation CLI",
+        "description": "SQL AST linter and rewrite tool built on Python + SQLGlot. Multi-dialect linting, query tree inspection, and automated anti-pattern rewrites keep high-throughput analytical SQL canonical and safe to mutate.",
+        "tech": ["Python", "SQLGlot", "AST parsing", "CustomTkinter"],
+        "github": "https://github.com/AhmadBilalDSA/sqlean-lint",
+        "live": true
+      }
+    ],
+    "openSource": [
+      {
+        "name": "SQLGlot",
+        "tagline": "4 PRs · DuckDB array-function parsing",
+        "description": "Extended the DuckDB dialect parser with LIST_POSITION, LIST_INDEXOF, and LIST_REVERSE mapped to exp.ArrayPosition AST nodes.",
+        "tech": ["Python", "SQLGlot", "DuckDB"],
+        "github": "https://github.com/tobymao/sqlglot/pull/8257",
+        "live": false,
+        "prState": "closed",
+        "prStateLabel": "PR #8257"
+      },
+      {
+        "name": "Ibis",
+        "tagline": "Open PR · Polars typing fix",
+        "description": "Contributing support for pl.Object conversion to dt.Unknown in PolarsType.to_ibis, keeping the Polars backend type-safe in Ibis 10.",
+        "tech": ["Python", "Ibis", "Polars"],
+        "github": "https://github.com/ibis-project/ibis/pull/12086",
+        "live": false,
+        "prState": "open",
+        "prStateLabel": "PR #12086"
+      },
+      {
+        "name": "SymPy",
+        "tagline": "Typing for sympy.utilities.decorator",
+        "description": "Added type annotations across sympy.utilities.decorator to tighten core decorator APIs used throughout the symbolic ecosystem.",
+        "tech": ["Python", "SymPy"],
+        "github": "https://github.com/sympy/sympy/pull/30384",
+        "live": false,
+        "prState": "closed",
+        "prStateLabel": "PR #30384"
+      },
+      {
+        "name": "HFlow",
+        "tagline": "Merged · curation validation rules",
+        "description": "Merged refactor consolidating the one-SELECT validation rule into a shared curation library, closing HFlow #280.",
+        "tech": ["Python", "HFlow"],
+        "github": "https://github.com/Hebbian-Robotics/hflow/pull/281",
+        "live": false,
+        "prState": "merged",
+        "prStateLabel": "PR #281 · merged"
+      },
+      {
+        "name": "SciTeX-io",
+        "tagline": "Merged · Feather I/O hardening",
+        "description": "Merged round-trip and invalid-extension test coverage for _load_feather, locking down file-type detection in the scientific I/O layer.",
+        "tech": ["Python", "SciTeX-io"],
+        "github": "https://github.com/scitex-ai/scitex-io/pull/166",
+        "live": false,
+        "prState": "merged",
+        "prStateLabel": "PR #166 · merged"
+      }
+    ]
+  },
+  "arsenal": {
+    "coreLanguages": [
+      { "label": "SQL", "detail": "PostgreSQL · MySQL · DuckDB · SQLite", "icon": "braces" },
+      { "label": "Python", "detail": "Pandas · NumPy · AST / SQLGlot", "icon": "code" },
+      { "label": "Rust", "detail": "Tauri v2 native systems", "icon": "wrench" },
+      { "label": "TypeScript", "detail": "React & tooling UIs", "icon": "react" },
+      { "label": "C/C++", "detail": "systems-level tooling", "icon": "cpu" }
+    ],
+    "biAnalytics": [
+      { "label": "Power BI", "detail": "DAX · Star Schema · Power Query", "icon": "chart" },
+      { "label": "Microsoft Excel", "detail": "XLOOKUP · Pivot Tables · Macros", "icon": "sheet" }
+    ],
+    "infrastructure": [
+      { "label": "GitHub Actions", "detail": "CI/CD automation · telemetry", "icon": "git" },
+      { "label": "Docker", "detail": "reproducible environments", "icon": "boxes" },
+      { "label": "Git", "detail": "workflows · release hygiene", "icon": "branch" },
+      { "label": "Linux / Bash", "detail": "scripting & automation", "icon": "terminal" },
+      { "label": "Headless Chromium", "detail": "Playwright automation", "icon": "globe" }
+    ]
+  },
+  "metrics": {
+    "education": {
+      "degree": "BS (Hons) Accounting & Finance",
+      "school": "Hailey College of Commerce, University of the Punjab",
+      "graduation": "Nov 2024",
+      "coursework": ["Financial Modeling", "Quantitative Analysis", "Business Statistics", "Information Systems"]
+    },
+    "certifications": ["IBM Data Science Professional Certificate"],
+    "coreStack": ["SQL", "Python", "Power BI", "Rust", "Docker", "DuckDB"],
+    "experience": [
+      {
+        "role": "Power BI & Analytics Trainer",
+        "organization": "PNY Trainings",
+        "org": "PNY Trainings / NAVTTC",
+        "period": "2026",
+        "badge": "2026",
+        "points": [
+          "Instructed Star Schema dimensional modeling, advanced DAX measures, and Power Query ETL pipelines.",
+          "Delivered end-to-end business intelligence and data analytics training to NAVTTC cohorts.",
+          "Turned real-world finance datasets into hands-on Power BI labs and graded assessments."
+        ]
+      },
+      {
+        "role": "Junior Data Scientist & Analyst",
+        "organization": "Timmy's Pizza",
+        "org": "Timmy's Pizza · 2024 - 2026",
+        "period": "2024 - 2026",
+        "badge": "2024 - 2026",
+        "points": [
+          "Automated operational telemetry, inventory forecasting, and data audits using Python, SQL, and Excel.",
+          "Built operational reporting pipelines, sales performance metrics, and scheduled reporting.",
+          "Designed star-schema models and DAX measures feeding executive Power BI dashboards."
+        ]
+      }
+    ]
+  },
+  "telemetryFallback": {
+    "status": "stale",
+    "last_run_timestamp": "2026-09-20T00:00:00.000Z",
+    "open_prs": 13,
+    "runs_count": 428,
+    "repo_health": "healthy"
+  }
+}
