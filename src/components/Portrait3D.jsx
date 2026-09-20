@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 
-const AVATAR_SPEC = 'https://avatars.githubusercontent.com/u/148782991'
-const AVATAR_VERIFIED = 'https://avatars.githubusercontent.com/u/315737484?v=4'
+const AVATAR_PRIMARY = '/avatar.jpg'
+const AVATAR_ONLINE = 'https://github.com/AhmadBilalDSA.png'
 
 export default function Portrait3D() {
-  const [imgSrc, setImgSrc] = useState(AVATAR_SPEC)
+  const [imgSrc, setImgSrc] = useState(AVATAR_PRIMARY)
 
   const rotateX = useMotionValue(0)
   const rotateY = useMotionValue(0)
@@ -46,7 +46,7 @@ export default function Portrait3D() {
           <img
             src={imgSrc}
             onError={() => {
-              if (imgSrc !== AVATAR_VERIFIED) setImgSrc(AVATAR_VERIFIED)
+              if (imgSrc !== AVATAR_ONLINE) setImgSrc(AVATAR_ONLINE)
             }}
             alt="Ahmad Bilal — profile portrait"
             width={128}
