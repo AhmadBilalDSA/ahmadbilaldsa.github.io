@@ -102,7 +102,7 @@ function Section({ children, className = '' }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.55 }}
-      className={`py-16 sm:py-24 ${className}`}
+      className={`mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8 ${className}`}
     >
       {children}
     </motion.section>
@@ -142,7 +142,7 @@ export default function App() {
           onOpenResume={() => setResumeOpen(true)}
         />
 
-        <main className="mx-auto max-w-6xl overflow-x-hidden px-4 pb-24 pt-28 sm:px-6 sm:pt-32 lg:px-8">
+        <main className="mx-auto max-w-6xl overflow-x-hidden pb-24 pt-28 sm:pt-32">
           <Section>
             <HeroSection onOpenResume={() => setResumeOpen(true)} />
           </Section>

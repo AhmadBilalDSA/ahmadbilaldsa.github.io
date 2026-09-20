@@ -13,7 +13,7 @@ const NAV = [
 
 export default function FloatingHeader({ onOpenPalette, onOpenResume }) {
   return (
-    <header className="fixed inset-x-0 top-4 z-50 mx-auto max-w-4xl px-4">
+    <header className="fixed inset-x-0 top-4 z-50 mx-auto max-w-[min(56rem,calc(100vw-1.5rem))] px-4">
       <div className="glass-bar flex items-center justify-between gap-3 rounded-2xl border border-slate-800/80 px-4 py-2.5 shadow-card sm:px-5">
         <div className="flex items-center gap-3">
           <a
@@ -41,16 +41,12 @@ export default function FloatingHeader({ onOpenPalette, onOpenResume }) {
           </span>
         </div>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-4 md:flex" aria-label="Primary">
           {NAV.map((item) => (
             <a
               key={item.id}
               href={item.id}
-              className={`rounded-lg px-3 py-1.5 text-sm font-medium text-slate-300 transition-colors hover:bg-white/[0.05] hover:text-cyan-300 ${
-                item.id === '#radar' || item.id === '#playground' || item.id === '#projects'
-                  ? 'hidden xl:inline-flex'
-                  : ''
-              }`}
+              className="rounded-lg px-3 py-1.5 text-sm font-medium text-slate-300 transition-colors hover:bg-white/[0.05] hover:text-cyan-300"
             >
               {item.label}
             </a>
@@ -98,7 +94,7 @@ export default function FloatingHeader({ onOpenPalette, onOpenResume }) {
           <button
             type="button"
             onClick={onOpenResume}
-            className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 px-3 py-2 text-xs font-semibold text-abyss transition-transform hover:-translate-y-px hover:shadow-glow"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 px-2.5 py-1 text-xs font-semibold text-abyss transition-transform hover:-translate-y-px hover:shadow-glow sm:px-3.5 sm:py-1.5 sm:text-sm"
           >
             <FileText className="size-3.5" />
             <span className="hidden sm:inline">Resume</span>

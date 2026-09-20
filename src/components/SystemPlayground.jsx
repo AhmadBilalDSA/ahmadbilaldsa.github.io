@@ -81,15 +81,17 @@ function DiffView() {
   return (
     <>
       <TabHeader prompt={TABS[0].prompt} repo={TABS[0].repo} />
-      <div className="mobile-touch-scroll max-w-full space-y-2 overflow-x-auto rounded-xl border border-slate-800 bg-abyss/70 p-4 font-mono text-[13px] leading-relaxed">
-        <p className="text-emerald-300">
-          + [INSERTED] {rows.inserted.toLocaleString()} rows (partition: 2026-09-Q3)
-        </p>
-        <p className="text-rose-300">- [DELETED] {rows.deleted} rows (keys mismatched in target)</p>
-        <p className="text-amber-300">~ [MUTATED] {rows.columns} columns (price_index schema normalized)</p>
-        <p className="pt-2 text-slate-500">
-          {scanning ? '…re-scanning parquet footers' : `snapshot 2026-09-Q3 · fingerprint f${rows.inserted + rows.deleted}7a`}
-        </p>
+      <div className="w-full touch-scroll rounded-lg">
+        <div className="inline-block min-w-full space-y-2 rounded-xl border border-slate-800 bg-abyss/70 p-4 font-mono text-[11px] leading-relaxed sm:text-xs md:text-[13px]">
+          <p className="text-emerald-300">
+            + [INSERTED] {rows.inserted.toLocaleString()} rows (partition: 2026-09-Q3)
+          </p>
+          <p className="text-rose-300">- [DELETED] {rows.deleted} rows (keys mismatched in target)</p>
+          <p className="text-amber-300">~ [MUTATED] {rows.columns} columns (price_index schema normalized)</p>
+          <p className="pt-2 text-slate-500">
+            {scanning ? '…re-scanning parquet footers' : `snapshot 2026-09-Q3 · fingerprint f${rows.inserted + rows.deleted}7a`}
+          </p>
+        </div>
       </div>
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <button
@@ -125,9 +127,11 @@ function AstView() {
         </button>
       </div>
 
-      <div className="mobile-touch-scroll max-w-full whitespace-pre overflow-x-auto rounded-xl border border-slate-800 bg-abyss/70 p-4 font-mono text-[13px] leading-relaxed text-slate-300">
+      <div className="w-full touch-scroll rounded-lg">
+        <div className="inline-block min-w-full whitespace-pre rounded-xl border border-slate-800 bg-abyss/70 p-4 font-mono text-[11px] leading-relaxed text-slate-300 sm:text-xs md:text-[13px]">
           {mode === 'raw' ? RAW_SQL : AST_TREE}
         </div>
+      </div>
 
       {mode === 'ast' && (
         <p className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 font-mono text-[11px] text-emerald-300">
@@ -172,23 +176,25 @@ function SqlView() {
           </button>
         </div>
 
-        <div className="whitespace-pre rounded-xl border border-slate-800 bg-abyss/70 p-4 font-mono text-[13px] leading-relaxed">
-          <p className="text-slate-500">
-            input <span aria-hidden="true">→</span>{' '}
-            <span className="text-slate-200">{sample ? SAMPLES[sample] : '— select an input sample —'}</span>
-          </p>
-          <p
-            className={cn(
-              'mt-3',
-              sample === 'malicious' ? 'text-rose-300' : sample === 'normal' ? 'text-emerald-300' : 'text-slate-600',
-            )}
-          >
-            {sample === 'malicious'
-              ? '[SECURITY FAULT TRAPPED] Identifier whitelist violation. Input rejected before query compilation. (0 SQL Injection risk)'
-              : sample === 'normal'
-                ? '[QUERY COMPILED] Parameterized prepared statement ready for execution.'
+        <div className="w-full touch-scroll rounded-lg">
+          <div className="inline-block min-w-full whitespace-pre rounded-xl border border-slate-800 bg-abyss/70 p-4 font-mono text-[11px] leading-relaxed sm:text-xs md:text-[13px]">
+            <p className="text-slate-500">
+              input <span aria-hidden="true">→</span>{' '}
+              <span className="text-slate-200">{sample ? SAMPLES[sample] : '— select an input sample —'}</span>
+            </p>
+            <p
+              className={cn(
+                'mt-3',
+                sample === 'malicious' ? 'text-rose-300' : sample === 'normal' ? 'text-emerald-300' : 'text-slate-600',
+              )}
+            >
+              {sample === 'malicious'
+                ? '[SECURITY FAULT TRAPPED] Identifier whitelist violation. Input rejected before query compilation. (0 SQL Injection risk)'
+                : sample === 'normal'
+                  ? '[QUERY COMPILED] Parameterized prepared statement ready for execution.'
                 : '[awaiting input …]'}
           </p>
+          </div>
         </div>
       </div>
     </>

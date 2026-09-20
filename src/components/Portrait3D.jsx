@@ -4,7 +4,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 const AVATAR_PRIMARY = '/avatar.jpg'
 const AVATAR_ONLINE = 'https://avatars.githubusercontent.com/u/315737484?v=4&s=1024'
 
-const COARSE_POINTER = typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches
+const FINE_POINTER = typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches
 
 export default function Portrait3D() {
   const [imgSrc, setImgSrc] = useState(AVATAR_PRIMARY)
@@ -33,9 +33,9 @@ export default function Portrait3D() {
   return (
     <div className="mx-auto mb-7 [perspective:1000px]">
       <motion.div
-        onMouseMove={COARSE_POINTER ? undefined : onMouseMove}
-        onMouseLeave={COARSE_POINTER ? undefined : onMouseLeave}
-        className="group relative h-40 w-40 sm:h-52 sm:w-52 md:h-60 md:w-60"
+        onMouseMove={FINE_POINTER ? onMouseMove : undefined}
+        onMouseLeave={FINE_POINTER ? onMouseLeave : undefined}
+        className="group relative h-36 w-36 sm:h-48 sm:w-48 md:h-56 md:w-56"
         whileHover={{ scale: 1.04 }}
         transition={{ type: 'spring', stiffness: 220, damping: 16 }}
         style={{ rotateX: tiltX, rotateY: tiltY, transformStyle: 'preserve-3d' }}

@@ -48,7 +48,7 @@ export default function CaseStudyDrawer() {
             role="dialog"
             aria-modal="true"
             aria-label={study.title}
-            className="fixed inset-y-0 right-0 z-50 h-full w-full overflow-y-auto custom-scrollbar border-l border-slate-800 bg-[#0a0e17] p-5 text-slate-200 shadow-2xl sm:max-w-2xl sm:p-8 lg:max-w-3xl md:p-10"
+            className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto custom-scrollbar border-l border-slate-800 bg-[#0a0e17] p-5 text-slate-200 shadow-2xl sm:max-w-2xl sm:p-8 md:p-10 lg:max-w-3xl"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
@@ -84,14 +84,14 @@ export default function CaseStudyDrawer() {
             <div className="mt-8 space-y-8">
               <div>
                 <SectionTitle icon={Activity}>The Bottleneck &amp; Context</SectionTitle>
-                <p className="break-words text-sm leading-relaxed text-slate-300 sm:text-base">{study.challenge}</p>
+                <p className="break-words text-xs leading-relaxed text-slate-300 sm:text-sm md:text-base">{study.challenge}</p>
               </div>
 
               <div>
                 <SectionTitle icon={Layers}>Architectural Pipeline</SectionTitle>
                 <div className="relative overflow-x-auto rounded-xl border border-slate-800 bg-[#07090e] card-bevel p-4 max-w-full sm:p-5">
                   <span className="absolute inset-y-0 left-0 w-0.5 bg-gradient-to-b from-cyan-400/80 via-cyan-400/30 to-transparent" />
-                  <p className="break-words whitespace-pre-wrap font-mono text-xs leading-relaxed text-cyan-300/90 sm:text-sm">
+                  <p className="break-words whitespace-pre-wrap font-mono text-xs leading-relaxed text-cyan-300 sm:text-sm">
                     {study.architecture}
                   </p>
                 </div>
@@ -115,7 +115,7 @@ export default function CaseStudyDrawer() {
 
               <div>
                 <SectionTitle icon={Cpu}>Core Technology Stack</SectionTitle>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {study.stack.map((tech) => (
                     <span
                       key={tech}
