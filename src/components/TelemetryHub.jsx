@@ -1,18 +1,10 @@
-import { useEffect, useState } from 'react'
-import { Activity, Cpu, Eye } from 'lucide-react'
+import { useState } from 'react'
+import { Activity, Cpu, Eye, GitPullRequest, Play } from 'lucide-react'
+import data from '../data/portfolioData.json'
 import { cn } from '../lib/utils'
 import useLiveTelemetry from '../hooks/useLiveTelemetry'
 
 const EDGE_VIEWS_KEY = 'ab-edge-views'
-
-function useUtcClock() {
-  const [now, setNow] = useState(() => new Date())
-  useEffect(() => {
-    const id = setInterval(() => setNow(new Date()), 1000)
-    return () => clearInterval(id)
-  }, [])
-  return now
-}
 
 function useEdgeViews() {
   const [views] = useState(() => {
@@ -32,22 +24,25 @@ function useEdgeViews() {
   return views
 }
 
-function HubBlock({ icon: Icon, label, accent = 'text-cyan-400', children }) {
+function Cell({ icon: Icon, label, accent = 'text-cyan-400', children }) {
   return (
-    <div className="flex h-full flex-col gap-2 rounded-xl border border-slate-800 bg-white/[0.02] p-4">
-      <span className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-slate-500">
+    <div className="flex h-full flex-col gap-3 rounded-xl border border-slate-800 bg-white/[0.02] p-4 transition-colors hover:border-cyan-500/30">
+      <span className="flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-slate-400">
         <Icon className={cn('size-3.5', accent)} />
         {label}
       </span>
-      <div className="flex flex-1 flex-col justify-center gap-1">{children}</div>
+      <div className="flex flex-1 flex-col justify-center gap-1.5">{children}</div>
     </div>
   )
 }
 
 export default function TelemetryHub() {
-  const { runs_count, connected, loading } = useLiveTelemetry()
-  const utc = useUtcClock()
+  const { runs_count, health, connected, loading } = useLiveTelemetry()
   const views = useEdgeViews()
+
+  const upstream = data.projects.openSource
+  const mergedCount = upstream.filter((pr) => pr.status === 'MERGED').length
+  const reconciliation = health === 'healthy' ? 'PASS' : 'WARN'
 
   return (
     <section id="telemetry" className="scroll-mt-28">
@@ -56,13 +51,17 @@ export default function TelemetryHub() {
         01 / presence-hub
       </p>
 
-      <div className="overflow-hidden rounded-2xl border border-slate-800/80 bg-[#0c1017] shadow-card backdrop-blur-md">
+      <div className="relative overflow-hidden rounded-2xl border border-slate-800/80 bg-[#0c1017] shadow-card backdrop-blur-md">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent"
+        />
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800/80 bg-elevated/70 px-4 py-2.5">
           <div className="flex items-center gap-2">
             <span className="size-3 rounded-full bg-rose/70" />
             <span className="size-3 rounded-full bg-amber/70" />
             <span className="size-3 rounded-full bg-emerald-400/70" />
-            <span className="ml-2 font-mono text-xs text-slate-500">bilal@dev — presence-hub :: void</span>
+            <span className="ml-2 font-mono text-xs text-slate-500">bilal@dev — activity-hub :: void</span>
           </div>
           <span
             className={cn(
@@ -78,43 +77,61 @@ export default function TelemetryHub() {
           </span>
         </div>
 
-        <div className="grid gap-3 p-4 sm:grid-cols-3 sm:p-5">
-          <HubBlock icon={Cpu} label="engineering pulse" accent="text-cyan-400">
-            <p className="font-mono text-2xl font-bold text-white sm:text-3xl">
+        <div className="grid gap-3 p-4 sm:grid-cols-2 sm:p-5 xl:grid-cols-4">
+          <Cell icon={Cpu} label="system pulse" accent="text-emerald-400">
+            <div className="flex items-center gap-2">
+              <span className="relative flex size-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />
+                <span className="relative inline-flex size-2.5 rounded-full bg-emerald-400" />
+              </span>
+              <span className="font-mono text-sm font-bold tracking-wider text-white">ACTIVE // DEV MODE</span>
+            </div>
+            <p className="font-mono text-[11px] text-slate-400">current focus</p>
+            <p className="font-mono text-xs font-semibold text-cyan-300">Rust / Tauri v2 &amp; AST Tooling</p>
+          </Cell>
+
+          <Cell icon={Play} label="automated ci/cd" accent="text-cyan-400">
+            <span className="inline-flex w-fit items-center gap-1.5 rounded-md border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-mono text-xs text-emerald-300">
+              <span className="size-1.5 rounded-full bg-emerald-400" />
+              DuckDB Reconciliation: {reconciliation}
+            </span>
+            <p className="font-mono text-[11px] text-slate-400">automated runs</p>
+            <p className="font-mono text-2xl font-bold text-white">
               {runs_count.toLocaleString()}
-              <span className="ml-2 text-sm font-semibold text-cyan-300">runs</span>
+              <span className="ml-1 text-sm font-semibold text-cyan-300">+</span>
             </p>
-            <p className="font-mono text-[11px] text-slate-400">automated duck-diff engine</p>
-            <p className="mt-1 border-t border-slate-800/80 pt-2 font-mono text-[11px] text-emerald-300">
-              UTC sync <span className="text-slate-300">{utc.toUTCString()}</span>
-            </p>
-          </HubBlock>
+          </Cell>
 
-          <HubBlock icon={Activity} label="activity beacon" accent="text-emerald-400">
-            <p className="flex items-center gap-2 font-mono text-sm font-semibold text-emerald-300">
-              <span className="size-2.5 animate-pulse-dot rounded-full bg-emerald-400" />
-              In Development
+          <Cell icon={GitPullRequest} label="upstream sync" accent="text-amber-400">
+            <p className="font-mono text-sm font-bold text-white">
+              {mergedCount} Merged
+              <span className="text-slate-500"> /</span>
+              <span className="text-cyan-300"> {upstream.length} Active upstream PRs</span>
             </p>
-            <p className="font-mono text-[11px] text-slate-400">// Systems Tooling</p>
-            <p className="mt-1 border-t border-slate-800/80 pt-2 font-mono text-[11px] text-slate-500">
-              active: ripgrep · duck-diff · sqlean-lint
-            </p>
-          </HubBlock>
+            <div className="flex flex-wrap gap-1.5">
+              {upstream.map((pr) => (
+                <a
+                  key={pr.name}
+                  href={pr.prUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="rounded-md border border-slate-700/60 bg-white/[0.03] px-2 py-0.5 font-mono text-[10px] text-slate-300 transition-colors hover:border-cyan-500/40 hover:text-cyan-300"
+                >
+                  {pr.name}
+                </a>
+              ))}
+            </div>
+          </Cell>
 
-          <HubBlock icon={Eye} label="edge traffic" accent="text-sky-400">
-            <p className="font-mono text-2xl font-bold text-white sm:text-3xl">
-              {views.toLocaleString()}
-              <span className="ml-2 text-sm font-semibold text-sky-300">views</span>
-            </p>
-            <p className="font-mono text-[11px] text-slate-400">this device session-based</p>
-            <p className="mt-1 border-t border-slate-800/80 pt-2 font-mono text-[11px] text-slate-500">
-              local-storage counter · zero cookies
-            </p>
-          </HubBlock>
+          <Cell icon={Eye} label="edge traffic" accent="text-sky-400">
+            <p className="font-mono text-2xl font-bold text-white">{views.toLocaleString()}</p>
+            <p className="font-mono text-[11px] text-slate-400">local page views · this device</p>
+            <p className="font-mono text-[11px] text-slate-500">localStorage counter · zero cookies</p>
+          </Cell>
         </div>
 
         <p className="flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-slate-800/80 px-4 py-2.5 font-mono text-[11px] text-slate-600">
-          <span>$# presence — privacy-friendly edge metrics</span>
+          <span>$# activity hub — engine, upstream, edge</span>
           <span className="ml-auto">source: duck-diff/portfolio_status.json · localStorage</span>
         </p>
       </div>
