@@ -1,0 +1,50 @@
+{
+  "timmys-logistics": {
+    "id": "timmys-logistics",
+    "title": "Timmy's Pizza · Geospatial Demand & Fleet Routing",
+    "role": "Junior Data Scientist (2-Year Tenure)",
+    "timeline": "Nov 2023 – Dec 2025",
+    "challenge": "High delivery latency (38-minute average) and elevated perishable waste (7.3%) across 14 commercial outlets caused by disconnected POS, CRM, and kitchen systems.",
+    "architecture": "Built a Python geospatial routing model ingesting 18,400 delivery logs combined with a 7-day predictive demand-forecasting pipeline (PostgreSQL + Python) feeding operational Power BI views.",
+    "metrics": [
+      "-31% Average Delivery Time (38m → 26m)",
+      "-58% Perishable Food Waste (7.3% → 3.1%)",
+      "-44% First-Quarter Customer Complaints",
+      "87% Weekly Leadership Reporting Time Cut (6h → 45m)"
+    ],
+    "stack": ["Python", "PostgreSQL", "Pandas", "Power BI", "Geospatial Routing"],
+    "highlights": "Consolidated POS, delivery logistics, and CRM into a unified warehouse schema with automated nightly ETL synchronization."
+  },
+  "sngpl-procurement": {
+    "id": "sngpl-procurement",
+    "title": "SNGPL · Automated Procurement & Vendor Risk Engine",
+    "role": "Procurement Analytics Intern",
+    "timeline": "Jul 2023 – Sep 2023",
+    "challenge": "Static quarterly reporting and 12-day vendor evaluation cycles led to procurement budget friction and delayed critical delivery pipelines.",
+    "architecture": "Engineered a 15-metric vendor scorecard model fed by 6 years of SQL transaction records, coupled with a Python delivery-prediction pipeline analyzing 4,200 purchase orders.",
+    "metrics": [
+      "PKR 4.7M Direct Budget Savings via Mid-Cycle Reallocations",
+      "66% Faster Vendor Evaluation Cycles (12 days → 4 days)",
+      "+18% Lift in On-Time Supplier Delivery (71% → 89%)",
+      "5 High-Risk Supply Contracts Renegotiated"
+    ],
+    "stack": ["Power BI", "SQL", "Python", "Predictive Risk Modeling", "ETL"],
+    "highlights": "Replaced static spreadsheets with drill-through interactive cost matrices surfacing budget variances."
+  },
+  "mockforge-desktop": {
+    "id": "mockforge-desktop",
+    "title": "MockForge · Native System Design Studio & Heuristic Simulator",
+    "role": "Creator & Systems Tooling Architect",
+    "timeline": "2026 – Active",
+    "challenge": "System design interview tools rely on sluggish cloud roundtrips with high latency, lacking offline heuristic feedback on single points of failure (SPOF).",
+    "architecture": "Local-first native desktop architecture with Rust/Tauri v2 IPC, zero-lag React Flow node canvas, DuckDB telemetry cache, and local SAPI audio synthesis.",
+    "metrics": [
+      "< 12ms Local IPC Latency via Native Rust Handlers",
+      "0 External API Dependencies (Fully Offline Evaluation)",
+      "Automated AST-Style Node Validation & SPOF Detection",
+      "Cross-Platform Native Window Surface (MinGW GCC 16.2.0)"
+    ],
+    "stack": ["Rust", "Tauri v2", "React Flow", "DuckDB", "TypeScript", "Tailwind CSS"],
+    "highlights": "Offline speech feedback with real-time heuristic structural analysis of distributed system topology."
+  }
+}

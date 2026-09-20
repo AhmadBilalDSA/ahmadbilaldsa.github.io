@@ -192,7 +192,13 @@ export default function ProjectBento() {
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
-        <TiltCard project={mockforge} category={CATEGORY.systems} featured featuredMedia={<MockForgeMedia />} />
+        <TiltCard
+          project={mockforge}
+          category={CATEGORY.systems}
+          featured
+          featuredMedia={<MockForgeMedia />}
+          caseStudyId="mockforge-desktop"
+        />
         <TiltCard project={sqlean} category={CATEGORY.data} media={<ProjectViewport src="/projects/sqlean-preview.svg" alt="sqlean-lint AST transform" />} />
         <DuckDiffTelemetry />
         <UpstreamOss />

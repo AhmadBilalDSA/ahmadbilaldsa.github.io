@@ -1,6 +1,7 @@
 import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { GithubIcon } from './BrandIcons'
+import { openCaseStudy } from '../hooks/useCaseStudyDrawer'
 
 const badgeStyles = {
   accent: 'bg-cyan-500/10 text-cyan-300 border border-cyan-500/20',
@@ -35,7 +36,7 @@ function PrStatePill({ state, label }) {
   )
 }
 
-export default function TiltCard({ project, category, featured = false, featuredMedia = null, media = null }) {
+export default function TiltCard({ project, category, featured = false, featuredMedia = null, media = null, caseStudyId = null }) {
   const cx = useMotionValue(0.5)
   const cy = useMotionValue(0.5)
 
@@ -89,7 +90,7 @@ export default function TiltCard({ project, category, featured = false, featured
             <div className="flex min-w-0 flex-col gap-4">
               <CardHead project={project} category={category} tint={tint} />
               <p className="text-sm leading-relaxed text-slate-300">{project.description}</p>
-              <CardFooter project={project} tint={tint} />
+              <CardFooter project={project} tint={tint} caseStudyId={caseStudyId} />
             </div>
           </div>
         ) : media ? (
@@ -143,7 +144,7 @@ function CardHead({ project, category, tint }) {
   )
 }
 
-function CardFooter({ project, tint }) {
+function CardFooter({ project, tint, caseStudyId = null }) {
   return (
     <>
       <div className="flex flex-wrap gap-2">
@@ -153,16 +154,28 @@ function CardFooter({ project, tint }) {
           </Badge>
         ))}
       </div>
-      <a
-        href={project.github}
-        target="_blank"
-        rel="noreferrer noopener"
-        className="mt-auto inline-flex w-fit items-center gap-2 rounded-lg border border-slate-700/70 bg-white/[0.03] px-3.5 py-2 text-sm font-medium text-slate-200 transition-colors duration-300 hover:border-cyan-500/50 hover:bg-white/[0.06] hover:text-cyan-300"
-      >
-        <GithubIcon className="size-4" />
-        {project.prState ? 'Pull request' : 'Source'}
-        <ArrowUpRight className="size-3.5 opacity-60" />
-      </a>
+      <div className="mt-auto flex flex-wrap items-center gap-2">
+        {caseStudyId && (
+          <button
+            type="button"
+            onClick={() => openCaseStudy(caseStudyId)}
+            className="inline-flex items-center gap-2 rounded-lg border border-cyan-500/40 bg-cyan-500/10 px-3.5 py-2 text-sm font-medium text-cyan-300 transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-500/20"
+          >
+            Case Study Breakdown
+            <ArrowUpRight className="size-3.5 opacity-80" />
+          </button>
+        )}
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="inline-flex items-center gap-2 rounded-lg border border-slate-700/70 bg-white/[0.03] px-3.5 py-2 text-sm font-medium text-slate-200 transition-colors duration-300 hover:border-cyan-500/50 hover:bg-white/[0.06] hover:text-cyan-300"
+        >
+          <GithubIcon className="size-4" />
+          {project.prState ? 'Pull request' : 'Source'}
+          <ArrowUpRight className="size-3.5 opacity-60" />
+        </a>
+      </div>
     </>
   )
 }

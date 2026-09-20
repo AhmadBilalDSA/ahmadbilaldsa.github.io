@@ -199,6 +199,7 @@
         "org": "Timmy's · Pizza Operations",
         "period": "Nov 2023 - Dec 2025",
         "badge": "Nov 2023 - Dec 2025",
+        "caseStudyId": "timmys-logistics",
         "points": [
           "Built a Python geospatial routing model on 18,400 delivery logs, cutting delivery times from 38 to 26 minutes (-31%) and complaints by 44%.",
           "Designed a Python/PostgreSQL demand-forecasting pipeline, dropping perishable waste from 7.3% to 3.1% (-58%) across 14 outlets.",
@@ -222,6 +223,7 @@
         "org": "Sui Northern Gas Pipelines Limited (SNGPL)",
         "period": "Jul 2023 - Sep 2023",
         "badge": "Jul - Sep 2023",
+        "caseStudyId": "sngpl-procurement",
         "points": [
           "Built a 15-metric Power BI vendor scorecard; cut supplier evaluation from 12 days to 4.",
           "Delivered an interactive cost dashboard that surfaced mid-cycle reallocations, saving PKR 4.7M against budget.",

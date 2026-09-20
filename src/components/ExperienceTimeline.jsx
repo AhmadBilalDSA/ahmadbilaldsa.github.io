@@ -1,6 +1,7 @@
-import { Award, BookOpen, Briefcase, Building2, Calendar, CheckCircle2, GraduationCap } from 'lucide-react'
+import { ArrowUpRight, Award, BookOpen, Briefcase, Building2, Calendar, CheckCircle2, GraduationCap } from 'lucide-react'
 import data from '../data/portfolioData.json'
 import { cn } from '../lib/utils'
+import { openCaseStudy } from '../hooks/useCaseStudyDrawer'
 
 function CardShell({ icon: Icon, label, accent = 'text-cyan-400' }) {
   return (
@@ -51,6 +52,16 @@ export default function ExperienceTimeline() {
                 </li>
               ))}
             </ul>
+            {exp.caseStudyId && (
+              <button
+                type="button"
+                onClick={() => openCaseStudy(exp.caseStudyId)}
+                className="mt-5 inline-flex w-fit items-center gap-1.5 font-mono text-xs font-medium text-cyan-300 transition-colors hover:text-cyan-200"
+              >
+                View case study breakdown
+                <ArrowUpRight className="size-3.5" />
+              </button>
+            )}
           </div>
         ))}
 

@@ -14,6 +14,7 @@ import OpenSourceLogs from './components/OpenSourceLogs'
 import ExperienceTimeline from './components/ExperienceTimeline'
 import ArsenalTabs from './components/ArsenalTabs'
 import LightweightSparkles from './components/LightweightSparkles'
+import CaseStudyDrawer from './components/CaseStudyDrawer'
 import { GithubIcon, InstagramIcon, LinkedinIcon } from './components/BrandIcons'
 
 function Footer() {
@@ -187,6 +188,7 @@ export default function App() {
         }}
       />
       <ResumeModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
+      <CaseStudyDrawer />
     </div>
   )
 }
