@@ -3,9 +3,7 @@ import data from '../data/portfolioData.json'
 import useLiveTelemetry from '../hooks/useLiveTelemetry'
 import { formatUTC } from '../lib/datetime'
 import { GithubIcon } from './BrandIcons'
-
-const AVATAR_SPEC = 'https://avatars.githubusercontent.com/u/148782991'
-const AVATAR_VERIFIED = 'https://avatars.githubusercontent.com/u/315737484?v=4'
+import Portrait3D from './Portrait3D'
 
 const KEYWORD_CHIPS = ['High-throughput SQL', 'AST analysis', 'Automated telemetry', 'Native desktop systems']
 
@@ -59,33 +57,12 @@ function HeroTelemetry() {
 export default function HeroSection({ onOpenResume }) {
   const p = data.personal
 
-  const onAvatarError = (e) => {
-    if (e.currentTarget.getAttribute('data-fallback')) return
-    e.currentTarget.setAttribute('data-fallback', '1')
-    e.currentTarget.src = AVATAR_VERIFIED
-  }
-
   return (
     <section id="top" className="pt-6 sm:pt-8">
       <div className="flex flex-col items-center text-center">
-        <div className="relative group mx-auto w-28 h-28 sm:w-32 sm:h-32 rounded-2xl p-[2px] bg-gradient-to-tr from-cyan-500/50 via-indigo-500/30 to-transparent shadow-[0_0_40px_-8px_rgba(6,182,212,0.35)]">
-          <div aria-hidden="true" className="border-beam absolute -inset-2 rounded-2xl opacity-80" />
-          <img
-            src={AVATAR_SPEC}
-            onError={onAvatarError}
-            alt="Ahmad Bilal — profile portrait"
-            width={128}
-            height={128}
-            className="relative w-full h-full object-cover object-top rounded-2xl filter contrast-[1.05] brightness-95 group-hover:brightness-105 transition-all duration-300"
-          />
-          <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 pointer-events-none" />
-          <span aria-hidden="true" className="absolute -bottom-1 -right-1 flex size-3.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />
-            <span className="relative inline-flex size-3.5 rounded-full bg-emerald-400 ring-2 ring-[#07090e]" />
-          </span>
-        </div>
+        <Portrait3D />
 
-        <span className="mt-7 inline-flex items-center gap-2.5 rounded-full border border-emerald-400/30 bg-emerald-500/10 py-1.5 pl-3 pr-4 text-sm font-medium text-emerald-100">
+        <span className="inline-flex items-center gap-2.5 rounded-full border border-emerald-400/30 bg-emerald-500/10 py-1.5 pl-3 pr-4 text-sm font-medium text-emerald-100">
           <span aria-hidden="true" className="relative flex size-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />
             <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
