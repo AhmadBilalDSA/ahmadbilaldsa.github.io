@@ -1,101 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" font-family="'JetBrains Mono', ui-monospace, monospace">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" font-family="'JetBrains Mono', ui-monospace, monospace">
   <defs>
     <pattern id="bg-dots" width="22" height="22" patternUnits="userSpaceOnUse">
-      <circle cx="1.2" cy="1.2" r="1.2" fill="#1e293b" opacity="0.55"/>
+      <circle cx="1.2" cy="1.2" r="1.2" fill="#1e293b" opacity="0.5"/>
     </pattern>
-    <radialGradient id="ambience" cx="62%" cy="8%" r="70%">
-      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.14"/>
-      <stop offset="55%" stop-color="#6366f1" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#07090e" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="node-glow" cx="50%" cy="50%" r="60%">
+    <radialGradient id="ambience" cx="50%" cy="4%" r="75%">
       <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.16"/>
-      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#6366f1" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0c1017" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="edge-grad" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#0e7490"/>
-      <stop offset="70%" stop-color="#22d3ee"/>
-      <stop offset="100%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
     </linearGradient>
     <filter id="soft-glow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="3.2" result="blur"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#22d3ee"/>
     </marker>
   </defs>
 
-  <rect width="800" height="340" fill="#07090e"/>
-  <rect width="800" height="340" fill="url(#bg-dots)"/>
-  <rect width="800" height="340" fill="url(#ambience)"/>
+  <rect width="600" height="340" fill="#0c1017"/>
+  <rect width="600" height="340" fill="url(#bg-dots)"/>
+  <rect width="600" height="340" fill="url(#ambience)"/>
 
-  <!-- top chrome -->
-  <text x="34" y="42" fill="#38bdf8" font-size="13" font-weight="600" letter-spacing="3">MOCKFORGE · SYSTEM DESIGN STUDIO</text>
-  <rect x="566" y="26" width="200" height="28" rx="14" fill="#0d121c" stroke="#1e293b"/>
-  <circle cx="592" cy="40" r="4" fill="#22d3ee"/>
-  <text x="606" y="45" fill="#94a3b8" font-size="12">Rust core · Tauri v2</text>
+  <text x="30" y="36" fill="#38bdf8" font-size="12.5" font-weight="600" letter-spacing="3">MOCKFORGE · SYSTEM DESIGN STUDIO</text>
+  <rect x="428" y="20" width="142" height="26" rx="13" fill="#0d121c" stroke="#1e293b"/>
+  <circle cx="450" cy="33" r="3.5" fill="#22d3ee"/>
+  <text x="462" y="37" fill="#94a3b8" font-size="11">Rust · Tauri v2</text>
 
-  <!-- Client node -->
-  <rect x="30" y="128" width="150" height="78" rx="12" fill="#0d121c" stroke="#334155"/>
-  <circle cx="55" cy="158" r="9" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-  <circle cx="55" cy="158" r="3.4" fill="#38bdf8"/>
-  <text x="74" y="156" fill="#e2e8f0" font-size="14" font-weight="600" letter-spacing="1">CLIENT</text>
-  <text x="73" y="174" fill="#64748b" font-size="11">React Flow canvas</text>
-  <text x="73" y="190" fill="#64748b" font-size="11">WebRTC / SAPI</text>
+  <!-- Client (React Flow) node -->
+  <rect x="30" y="112" width="150" height="76" rx="12" fill="#0d121c" stroke="#334155"/>
+  <circle cx="54" cy="140" r="8.5" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+  <circle cx="54" cy="140" r="3.2" fill="#38bdf8"/>
+  <text x="73" y="138" fill="#e2e8f0" font-size="13" font-weight="600" letter-spacing="1">CLIENT</text>
+  <text x="72" y="156" fill="#64748b" font-size="11">(React Flow)</text>
+  <text x="72" y="172" fill="#64748b" font-size="11">interactive board</text>
 
-  <!-- API Gateway node -->
-  <rect x="325" y="128" width="160" height="78" rx="12" fill="#0d121c" stroke="#155e75"/>
-  <rect x="325" y="128" width="160" height="78" rx="12" fill="url(#node-glow)"/>
-  <circle cx="350" cy="158" r="9" fill="#0f172a" stroke="#22d3ee" stroke-width="1.5"/>
-  <circle cx="350" cy="158" r="3.4" fill="#22d3ee"/>
-  <text x="369" y="156" fill="#e2e8f0" font-size="14" font-weight="600" letter-spacing="1">API GATEWAY</text>
-  <text x="368" y="174" fill="#64748b" font-size="11">Rust axum API</text>
-  <text x="368" y="190" fill="#64748b" font-size="11">SPOF / cache router</text>
+  <!-- API Gateway / Tauri IPC node -->
+  <rect x="232" y="112" width="152" height="76" rx="12" fill="#0d121c" stroke="#155e75"/>
+  <rect x="232" y="112" width="152" height="76" rx="12" fill="url(#ambience)"/>
+  <circle cx="256" cy="140" r="8.5" fill="#0f172a" stroke="#22d3ee" stroke-width="1.5"/>
+  <circle cx="256" cy="140" r="3.2" fill="#22d3ee"/>
+  <text x="275" y="138" fill="#e2e8f0" font-size="13" font-weight="600" letter-spacing="1">API GATEWAY</text>
+  <text x="274" y="156" fill="#64748b" font-size="11">Tauri IPC bridge</text>
+  <text x="274" y="172" fill="#64748b" font-size="11">Rust command layer</text>
 
-  <!-- DuckDB Engine node -->
-  <rect x="620" y="128" width="150" height="78" rx="12" fill="#0d121c" stroke="#155e75"/>
-  <rect x="620" y="128" width="150" height="78" rx="12" fill="url(#node-glow)"/>
-  <circle cx="645" cy="158" r="9" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-  <circle cx="645" cy="158" r="3.4" fill="#34d399"/>
-  <text x="664" y="156" fill="#e2e8f0" font-size="14" font-weight="600" letter-spacing="1">DUCKDB ENGINE</text>
-  <text x="663" y="174" fill="#64748b" font-size="11">On-device OLAP</text>
-  <text x="663" y="190" fill="#64748b" font-size="11">Local-first queries</text>
+  <!-- DuckDB Local Cache node -->
+  <rect x="436" y="112" width="134" height="76" rx="12" fill="#0d121c" stroke="#155e75"/>
+  <circle cx="458" cy="140" r="8.5" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+  <circle cx="458" cy="140" r="3.2" fill="#34d399"/>
+  <text x="477" y="138" fill="#e2e8f0" font-size="13" font-weight="600" letter-spacing="1">DUCKDB</text>
+  <text x="476" y="156" fill="#64748b" font-size="11">Local Cache</text>
+  <text x="476" y="172" fill="#64748b" font-size="11">offline OLAP</text>
 
-  <!-- edges Client -> Gateway -->
-  <line x1="180" y1="167" x2="325" y2="167" stroke="#155e75" stroke-width="2"/>
-  <line x1="180" y1="167" x2="325" y2="167" stroke="url(#edge-grad)" stroke-width="2.4" stroke-linecap="round" filter="url(#soft-glow)"
+  <!-- pulsing cyan edge: Client -> Gateway -->
+  <line x1="180" y1="150" x2="232" y2="150" stroke="#155e75" stroke-width="2"/>
+  <line x1="180" y1="150" x2="232" y2="150" stroke="url(#edge-grad)" stroke-width="2.4" stroke-linecap="round" filter="url(#soft-glow)"
         stroke-dasharray="7 11" marker-end="url(#arrowhead)">
-    <animate attributeName="stroke-dashoffset" from="0" to="-54" dur="1.7s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-dashoffset" from="0" to="-54" dur="1.6s" repeatCount="indefinite"/>
   </line>
 
-  <!-- edge Gateway -> DuckDB -->
-  <line x1="485" y1="167" x2="620" y2="167" stroke="#155e75" stroke-width="2"/>
-  <line x1="485" y1="167" x2="620" y2="167" stroke="url(#edge-grad)" stroke-width="2.4" stroke-linecap="round" filter="url(#soft-glow)"
+  <!-- pulsing cyan edge: Gateway -> DuckDB -->
+  <line x1="384" y1="150" x2="436" y2="150" stroke="#155e75" stroke-width="2"/>
+  <line x1="384" y1="150" x2="436" y2="150" stroke="url(#edge-grad)" stroke-width="2.4" stroke-linecap="round" filter="url(#soft-glow)"
         stroke-dasharray="7 11" marker-end="url(#arrowhead)">
     <animate attributeName="stroke-dashoffset" from="0" to="-54" dur="1.9s" repeatCount="indefinite"/>
   </line>
 
-  <!-- latency labels along edges -->
-  <text x="218" y="152" fill="#0e7490" font-size="10.5">9 ms</text>
-  <text x="528" y="152" fill="#0e7490" font-size="10.5">3 ms</text>
+  <text x="196" y="138" fill="#0e7490" font-size="10.5">ipc →</text>
+  <text x="398" y="138" fill="#0e7490" font-size="10.5">query →</text>
 
-  <!-- badge cluster -->
-  <g>
-    <rect x="210" y="248" width="110" height="30" rx="15" fill="#0d121c" stroke="#22d3ee" stroke-opacity="0.45"/>
-    <circle cx="236" cy="263" r="3.5" fill="#22d3ee"/>
-    <text x="248" y="267" fill="#67e8f9" font-size="12.5" font-weight="600">SPOF: 0</text>
+  <!-- status chips -->
+  <rect x="168" y="240" width="132" height="30" rx="15" fill="#0d121c" stroke="#34d399" stroke-opacity="0.5"/>
+  <circle cx="194" cy="255" r="3.5" fill="#34d399"/>
+  <text x="206" y="259" fill="#6ee7b7" font-size="12.5" font-weight="600">SPOF: None</text>
 
-    <rect x="336" y="248" width="138" height="30" rx="15" fill="#0d121c" stroke="#34d399" stroke-opacity="0.45"/>
-    <circle cx="362" cy="263" r="3.5" fill="#34d399"/>
-    <text x="374" y="267" fill="#6ee7b7" font-size="12.5" font-weight="600">Latency: 12ms</text>
-
-    <rect x="490" y="248" width="176" height="30" rx="15" fill="#0d121c" stroke="#64748b" stroke-opacity="0.5"/>
-    <circle cx="518" cy="263" r="3.5" fill="#94a3b8"/>
-    <text x="530" y="267" fill="#a5b4c5" font-size="12.5">Offline heuristic</text>
-  </g>
+  <rect x="310" y="240" width="160" height="30" rx="15" fill="#0d121c" stroke="#22d3ee" stroke-opacity="0.5"/>
+  <circle cx="336" cy="255" r="3.5" fill="#22d3ee"/>
+  <text x="348" y="259" fill="#67e8f9" font-size="12.5" font-weight="600">Heuristics: Active</text>
 
   <!-- footer status -->
-  <text x="34" y="312" fill="#475569" font-size="11.5" letter-spacing="1">SYSTEM FLOW · RUST + TAURI V2 · 2 NODES ONLINE</text>
-  <text x="700" y="312" fill="#34d399" font-size="11.5">HEALTHY</text>
+  <text x="30" y="308" fill="#475569" font-size="11" letter-spacing="1">AI MOCK INTERVIEWER · HEURISTIC GRADES ON-DEVICE</text>
+  <text x="516" y="308" fill="#34d399" font-size="11">● ZERO EGRESS</text>
 </svg>

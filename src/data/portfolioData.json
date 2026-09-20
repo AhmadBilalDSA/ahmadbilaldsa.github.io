@@ -56,8 +56,8 @@
     "openSource": [
       {
         "name": "SQLGlot",
-        "tagline": "4 PRs · DuckDB array-function parsing",
-        "description": "Extended the DuckDB dialect parser with LIST_POSITION, LIST_INDEXOF, and LIST_REVERSE mapped to exp.ArrayPosition AST nodes.",
+        "tagline": "Closed · DuckDB array-function AST",
+        "description": "feat(duckdb): parse LIST_POSITION, LIST_INDEXOF, and LIST_REVERSE as array AST nodes.",
         "tech": ["Python", "SQLGlot", "DuckDB"],
         "github": "https://github.com/tobymao/sqlglot/pull/8257",
         "live": false,
@@ -66,8 +66,8 @@
       },
       {
         "name": "Ibis",
-        "tagline": "Open PR · Polars typing fix",
-        "description": "Contributing support for pl.Object conversion to dt.Unknown in PolarsType.to_ibis, keeping the Polars backend type-safe in Ibis 10.",
+        "tagline": "Open PR · Polars object typing fix",
+        "description": "fix(polars): support pl.Object conversion to dt.Unknown in PolarsType.to_ibis — keeping the Polars backend type-safe in Ibis 10.",
         "tech": ["Python", "Ibis", "Polars"],
         "github": "https://github.com/ibis-project/ibis/pull/12086",
         "live": false,
@@ -76,8 +76,8 @@
       },
       {
         "name": "SymPy",
-        "tagline": "Typing for sympy.utilities.decorator",
-        "description": "Added type annotations across sympy.utilities.decorator to tighten core decorator APIs used throughout the symbolic ecosystem.",
+        "tagline": "Closed · sympy typing annotations",
+        "description": "enhancement(typing): add type annotations to sympy.utilities.decorator (#28806) — tightening core decorator APIs throughout the symbolic ecosystem.",
         "tech": ["Python", "SymPy"],
         "github": "https://github.com/sympy/sympy/pull/30384",
         "live": false,
@@ -87,7 +87,7 @@
       {
         "name": "HFlow",
         "tagline": "Merged · curation validation rules",
-        "description": "Merged refactor consolidating the one-SELECT validation rule into a shared curation library, closing HFlow #280.",
+        "description": "refactor(curation): consolidate one-SELECT validation rule into library (closes #280).",
         "tech": ["Python", "HFlow"],
         "github": "https://github.com/Hebbian-Robotics/hflow/pull/281",
         "live": false,
@@ -97,7 +97,7 @@
       {
         "name": "SciTeX-io",
         "tagline": "Merged · Feather I/O hardening",
-        "description": "Merged round-trip and invalid-extension test coverage for _load_feather, locking down file-type detection in the scientific I/O layer.",
+        "description": "test(io): add round-trip and invalid-extension tests for _load_feather — locking down file-type detection in the scientific I/O layer.",
         "tech": ["Python", "SciTeX-io"],
         "github": "https://github.com/scitex-ai/scitex-io/pull/166",
         "live": false,
